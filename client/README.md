@@ -1,6 +1,6 @@
 # PetBio Frontend
 
-PetBio is a website which allows pet owners to create a 'Pet Resume' with important information about their pets, and allows them to share this with other people such as veterinarians and caretakers in a 'CV format'
+This is the frontend of PetBio which contains the react app website
 
 ## Dependencies installed:
 * react-router-dom

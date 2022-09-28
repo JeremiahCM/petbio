@@ -1,11 +1,12 @@
-# PetBio Backend
+# PetBio
 
-This is the backend of PetBio which sets up the API routes and MongoDB connection for the frontend application
+PetBio is a website which allows pet owners to create a 'Pet Resume' with important information about their pets, and allows them to share this with other people such as veterinarians and caretakers in a 'CV format'
 
-## Dependencies installed:
-* Express
-* NodeJS
+## Technologies & Tools Used:
+* MERN Stack
+    * MongoDB
+    * Express
+    * React
+    * NodeJS
+* MaterialUI
 * Nodemon
-
-## Other Technologies:
-* MongoDB Atlas
