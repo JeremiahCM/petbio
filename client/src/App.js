@@ -1,14 +1,13 @@
 import React from "react";
 //import { Route, Routes } from "react-router-dom";
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import Landing from './components/landing/Landing'
+
 
 function App() {
   return (
     <Box className="App">
-      <Typography variant="h1">
-        PetBio
-      </Typography>
+        <Landing></Landing>
     </Box>
   );
 }
