@@ -3,12 +3,12 @@ const app = express();
 const cors = require("cors");
 require("dotenv").config({ path: "./config.env" });
 const port = process.env.PORT || 5000;
-const pets = require("./routes/pet");
 
 app.use(cors());
 app.use(express.json());
 
-// TODO: add required routes
+// Required routes
+const pets = require("./routes/pet");
 
 // Get driver connection
 const dbo = require("./db/conn");
@@ -18,4 +18,4 @@ app.listen(port, () => {
   dbo.runDB().catch(console.dir);
 });
 
-app.use("/add", pets);
+app.use("/pets", pets);

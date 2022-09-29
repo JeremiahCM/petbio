@@ -6,18 +6,22 @@ const client = new MongoClient(Db, {
   useUnifiedTopology: true,
 });
 
+var database;
+
 async function runDB() {
     try {
         await client.connect();
+        database = client.db("petbio");
         console.log(`Server is running on port: ${port}`);
     } catch (err) {
         console.log(err.stack);
     }
-    finally {
-        await client.close();
-    }
+}
+
+function getDatabase() {
+    return database;
 }
 
 module.exports = {
-    runDB
+    runDB, getDatabase
 }
