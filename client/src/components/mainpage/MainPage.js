@@ -3,14 +3,13 @@ import React from "react";
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { Grid, Paper} from "@mui/material";
-import logo from '../landing/assets/PetBioLogo.png'
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
 
-import Navbar from '../navbar/navbar'
-import Sidebar from '../sidebar/sidebar'
+import Navbar from '../navbar/Navbar'
+import NavDrawer from "../drawer/NavDrawer";
 
 import  './MainPage.css';
 
@@ -38,6 +37,7 @@ function MainPage() {
           alignItems="center"
           justifyContent="center">
             <Navbar className="Navbar"/>
+            <NavDrawer/>
         </Grid>
       </Typography>
     </Box>

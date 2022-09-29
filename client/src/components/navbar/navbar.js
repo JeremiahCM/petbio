@@ -7,8 +7,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
-import MainLogo from '../logo/logo'
-import './navbar.css'
+import MainLogo from '../logo/Logo'
+import './Navbar.css'
 
 export default function Navbar() {
   return (

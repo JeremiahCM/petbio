@@ -1,6 +1,6 @@
 /* eslint-disable arrow-body-style */
 import mainImage from "../../images/PetBioLogo.png"
-import './logo.css'
+import './Logo.css'
 
 /**
  * Shows the logo for the application.
