@@ -1,0 +1,43 @@
+const mongoose = require("mongoose");
+
+const BioSchema = new mongoose.Schema({
+  id: {
+    type: Number,
+    require: true,
+  },
+
+  name: {
+    type: String,
+    require: true,
+  },
+
+  species: {
+    type: String,
+    require: true,
+  },
+
+  breed: {
+    type: String,
+    require: true,
+  },
+
+  gender: {
+    type: String,
+    require: true,
+  },
+
+  birthday: {
+    type: Date,
+  },
+
+  age: {
+    type: Number,
+  },
+
+  description: {
+    type: String,
+  },
+});
+
+const Bio = mongoose.model("Bio", BioSchema);
+module.exports = Bio;
