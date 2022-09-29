@@ -1,0 +1,41 @@
+/* Hex Values:
+#ffffff white
+#47bfaf turquoise 
+#031e45 dark navy blue
+*/
+/*
+css rules:
+font-family: 'Baloo 2', cursive;
+font-family: 'Montserrat', sans-serif;
+*/
+*{
+    font-family: 'Montserrat', sans-serif!important;
+}
+html {
+    background: linear-gradient(359deg, #47bfaf, #031e45);
+    background-size: 400% 400%;
+    background-repeat: no-repeat;
+    animation: AnimationName 30s ease infinite;
+    height: 100%;
+}
+
+@keyframes AnimationName {
+    0%{background-position:50% 0%}
+    50%{background-position:51% 100%}
+    100%{background-position:50% 0%}
+}
+.heading{
+    font-family: 'Baloo 2', cursive!important;
+}
+.logo{
+    width: 50%;
+}
+.heading{
+    margin-top: 5%;
+}
+.css-1lxbxf0-MuiButtonBase-root-MuiButton-root:hover{
+    background-color: #031e45!important;
+}
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked{
+    color: #031e45!important;
+}
