@@ -9,6 +9,7 @@ app.use(express.json());
 
 // Required routes
 const pets = require("./routes/pet");
+const accounts = require("./routes/account");
 
 // Get driver connection
 const dbo = require("./db/conn");
@@ -19,3 +20,4 @@ app.listen(port, () => {
 });
 
 app.use("/pets", pets);
+app.use("/account", accounts);
