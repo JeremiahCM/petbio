@@ -11,13 +11,7 @@ font-family: 'Montserrat', sans-serif;
 *{
     font-family: 'Montserrat', sans-serif!important;
 }
-html {
-    background: linear-gradient(359deg, #47bfaf, #031e45);
-    background-size: 400% 400%;
-    background-repeat: no-repeat;
-    animation: AnimationName 30s ease infinite;
-    height: 100%;
-}
+
 
 @keyframes AnimationName {
     0%{background-position:50% 0%}
