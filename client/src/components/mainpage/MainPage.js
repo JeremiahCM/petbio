@@ -37,7 +37,7 @@ function MainPage() {
           direction="column"
           alignItems="center"
           justifyContent="center">
-            <Navbar/>
+            <Navbar className="Navbar"/>
         </Grid>
       </Typography>
     </Box>

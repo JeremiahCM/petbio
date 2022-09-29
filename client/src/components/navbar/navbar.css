@@ -1,5 +1,7 @@
 .Navbar{
     height: 75px;
-    width: 100vw;
-    margin: 0%;
+}
+
+.NavbarToolbar{
+    width: 100%;
 }
