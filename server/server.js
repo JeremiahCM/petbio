@@ -18,4 +18,4 @@ app.listen(port, () => {
   dbo.runDB().catch(console.dir);
 });
 
-app.use("/add", pets);
+app.use("/pets", pets);

@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const BioSchema = new mongoose.Schema({
   id: {
-    type: Number,
+    type: String,
     require: true,
   },
 
