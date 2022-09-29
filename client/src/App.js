@@ -1,22 +1,15 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import Landing from './components/landing/Landing'
 
-import PetForm from './components/PetForm';
-import PetView from './components/PetView';
+import PetForm from './components/petForm/PetForm';
+import PetView from './components/petView/PetView';
 
 function App() {
 
   return (
     <Box className="App">
-        <Typography variant="h1">
-          PetBio
-        </Typography>
-        <Box className="form" sx={{backgroundColor: "grey"}}>
-          <PetForm>
-          </PetForm>
-        </Box>
         <Routes>
           <Route exact path="/" element={<PetView />} />
           <Route exact path="/landing" element={<Landing />} />

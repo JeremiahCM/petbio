@@ -1,14 +1,27 @@
-import '../styles/bio.css';
+import './PetForm.css';
 import dayjs from 'dayjs';
 import { useState } from 'react';
-import { Box, Button, FormControl, Grid, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material';
+import { Box, Button, FormControl, Grid, InputLabel, MenuItem, Select, TextareaAutosize, TextField, Typography } from '@mui/material';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 const PetForm = () => {
+    const tfStyle = {
+        "& .MuiOutlinedInput-root": {
+            color: "#47bfaf",
+            fontFamily: 'Montserrat',
+          "&.Mui-focused fieldset": {
+            borderColor: "#47bfaf"
+          },
+          '&:hover fieldset': {
+            borderColor: '#47bfaf',
+          },
+        },
+        "minWidth": "320px"
+    }     
+
     const [petData, setPetData] = useState({
-        id: "",
         name: "",
         species: "",
         breed: "",
@@ -53,7 +66,6 @@ const PetForm = () => {
         });
         
         setPetData({
-            id: "",
             name: "",
             species: "",
             breed: "",
@@ -75,6 +87,7 @@ const PetForm = () => {
             >
                 <Typography>Pet Bio Form</Typography>
                 <TextField
+                    sx={tfStyle}
                     margin="normal"
                     type="string"
                     label="Name"
@@ -84,6 +97,7 @@ const PetForm = () => {
                     autoFocus
                 />
                 <TextField
+                    sx={tfStyle}
                     margin="normal"
                     type="string"
                     label="Species"
@@ -92,6 +106,7 @@ const PetForm = () => {
                     onChange={updatePetData}
                 />
                 <TextField
+                    sx={tfStyle}
                     margin="normal"
                     type="string"
                     label="Breed"
@@ -102,7 +117,7 @@ const PetForm = () => {
                 <FormControl margin="normal">
                     <InputLabel id="gender-select">Gender</InputLabel>
                     <Select
-                        sx={{ minWidth: "120px" }}
+                        sx={tfStyle}
                         label="Gender"
                         name="gender"
                         id="gender-select"
@@ -121,18 +136,25 @@ const PetForm = () => {
                         onChange={(newDate) => {
                             setPetData({ ...petData, birthdate: newDate, age: calculateAge(newDate)});
                         }}
-                        renderInput={(params) => <TextField margin="normal" {...params} />}
+                        renderInput={(params) => <TextField sx={tfStyle} margin="normal" {...params} />}
                     />
                 </LocalizationProvider>
-                <Typography>Age: {petData.age}</Typography>
-                <TextField
+                <Typography>Description</Typography>
+                <TextareaAutosize
                     margin="normal"
                     label="Description"
                     name="description"
                     value={petData.description}
                     onChange={updatePetData}
+                    minRows={8}
+                    maxRows={8}
+                    style={{ width: 320 }}
                 />
-                <Button variant="contained" type="submit">Add new Pet</Button>
+                <Button
+                    sx={{ mt: 2 }}
+                    variant="contained"
+                    type="submit"
+                >Add new Pet</Button>
             </Grid>
         </Box>
     )

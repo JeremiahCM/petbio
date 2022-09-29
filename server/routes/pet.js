@@ -2,31 +2,29 @@ const express = require("express");
 const { reset } = require("nodemon");
 const router = express.Router();
 const Bio = require("../models/Bio");
+const dbo = require("../db/conn");
+const { v4: uuidv4 } = require('uuid');
 
-//adding bio information for a dog
+const collectionName = "pets";
+
+//adding bio information for a new pet
 router.post("/add", (req, res) => {
-    const id = "289347238794";
-    const name = req.body.name;
-    const species = req.body.species;
-    const breed = req.body.breed;
-    const gender = req.body.gender;
-    const birthday = req.body.birthday;
-    const age = req.body.age;
-    const description = req.body.description;
+    let db_connect = dbo.getDatabase();
 
-    const newPet = new Bio({
-        id,
-        name,
-        species,
-        breed,
-        gender,
-        birthday,
-        age,
-        description,
-    });
+    let pet = new Bio ({
+        name: req.body.name,
+        species: req.body.species,
+        breed: req.body.breed,
+        gender: req.body.gender,
+        birthdate: req.body.birthdate,
+        age: req.body.age,
+        description: req.body.description
+    })
 
-    newPet.save().then(() => res.json("Pet added!"))
-    .catch((err) => res.status(404).json("Error" + err)) 
+    console.log(db_connect);
+
+    db_connect.collection("pets").insertOne(pet).then(() => res.json("Pet added!"))
+    .catch((err) => res.status(404).json("Error" + err))
 });
 
 router.get("/view", (req, res) => {

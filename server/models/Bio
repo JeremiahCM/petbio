@@ -1,11 +1,6 @@
 const mongoose = require("mongoose");
 
 const BioSchema = new mongoose.Schema({
-  id: {
-    type: String,
-    require: true,
-  },
-
   name: {
     type: String,
     require: true,
@@ -26,7 +21,7 @@ const BioSchema = new mongoose.Schema({
     require: true,
   },
 
-  birthday: {
+  birthdate: {
     type: Date,
   },
 
