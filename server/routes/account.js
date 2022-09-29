@@ -26,11 +26,11 @@ router.post("/add", (req, res) => {
     .catch((err) => res.status(404).json("Error" + err))
 });
 
-router.get("/view/:name", (req, res) => {
+router.get("/view", (req, res) => {
     let db_connect = dbo.getDatabase();
 
-    db_connect.collection("pets").findOne({name: req.params.name}).then((Bio) => res.json(Bio)).catch((err) => res.status(404).json())
-    
+    db_connect.collection("pets").findOne().then((Bio) => res.json(Bio).catch((err) => res.status(404).json({})
+    ));
 });
 
 
