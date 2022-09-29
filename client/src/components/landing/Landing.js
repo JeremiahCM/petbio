@@ -10,13 +10,16 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
 
-const style = {
+const tfStyle = {
     "& .MuiOutlinedInput-root": {
         color: "#47bfaf",
         fontFamily: 'Montserrat',
       "&.Mui-focused fieldset": {
         borderColor: "#47bfaf"
-      }
+      },
+      '&:hover fieldset': {
+        borderColor: '#47bfaf',
+      },
     }
   } 
 
@@ -41,7 +44,7 @@ function Landing() {
                 justifyContent: "center",
                 textAlign: "center",
             }}>
-            <Typography component="h1" variant="h5" className="heading" sx= {{color: "#47bfaf", fontSize: "42px"}}>
+            <Typography component="h1" variant="h5" className="heading" sx= {{color: "#47bfaf", fontSize: "42px", marginTop: "5%"}}>
                 Sign in
             </Typography>
             <Grid
@@ -50,7 +53,7 @@ function Landing() {
               direction="column"
               alignItems="center"
               justifyContent="center">
-            <TextField sx={style}
+            <TextField sx={tfStyle}
               margin="normal"
               required
               width="50%"
@@ -60,7 +63,7 @@ function Landing() {
               autoComplete="email"
               autoFocus
             />
-            <TextField sx={style}
+            <TextField sx={tfStyle}
               margin="normal"
               required
               width="50%"
@@ -70,15 +73,20 @@ function Landing() {
               id="password"
               autoComplete="current-password"
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
+            <FormControlLabel sx={{color: "#47bfaf",fontWeight: "750"}}
+              control={<Checkbox value="remember"/>}
               label="Remember me"
             />
             <Button
               type="submit"
               width="50%"
               variant="contained"
-              sx={{ mt: 3, mb: 2, marginBotton: "5%",backgroundColor: "#47bfaf"}}
+              sx={{ mt: 3, mb: 2,backgroundColor: "#47bfaf",
+              ':hover': {
+                bgcolor: '#031e45',
+                color: 'white',
+              },
+            }}
             >
               Sign In
             </Button>

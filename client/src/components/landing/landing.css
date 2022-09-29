@@ -39,3 +39,10 @@ html {
 .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked{
     color: #031e45!important;
 }
+.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root {
+     color: #47bfaf!important;
+     font-weight: 700!important;
+}
+.btn{
+    margin-bottom: 5%;
+}
