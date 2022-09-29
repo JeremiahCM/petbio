@@ -1,6 +1,6 @@
 .mainLogo {
-    top: 10px; left: 10px;
+    left: 0px;
+    top: 100px;
     width: auto;
-    max-width: 80%;
-    height: 12%;
+    max-height: 80%;
 }

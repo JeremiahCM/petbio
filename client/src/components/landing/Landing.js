@@ -2,7 +2,7 @@ import React from "react";
 //import { Route, Routes } from "react-router-dom";
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import  './landing.css';
+import  './Landing.css';
 import { Grid, Paper} from "@mui/material";
 import logo from './assets/PetBioLogo.png'
 import TextField from '@mui/material/TextField';
@@ -23,7 +23,7 @@ const tfStyle = {
     }
   } 
 
-function Landing() {
+function Landing({signedIn}) {
   return (
     <Box className="landing">
       <Typography variant="h1">
@@ -87,7 +87,7 @@ function Landing() {
                 color: 'white',
               },
             }}
-            >
+            onClick={() => signedIn(true)}>
               Sign In
             </Button>
             </Grid>
