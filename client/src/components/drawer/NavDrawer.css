@@ -1,0 +1,37 @@
+/* Hex Values:
+#ffffff white
+#47bfaf turquoise 
+#031e45 dark navy blue
+*/
+/*
+css rules:
+font-family: 'Baloo 2', cursive;
+font-family: 'Montserrat', sans-serif;
+*/
+
+.css-1160xiw-MuiPaper-root-MuiDrawer-paper {
+    background: 0 !important;
+    top: 4rem !important;
+    box-shadow: none !important;
+  }
+  .css-1vfk20j-MuiTypography-root {
+    margin: 0 !important;
+    font-family: Lato,Prata !important;
+    font-weight: 500 !important;
+    font-size: 1.2rem !important;
+    line-height: 1.5 !important;
+    display: block !important;
+  }
+  .css-185z3ai-MuiPaper-root {
+    margin-bottom: 0.75% !important;
+  }
+  .list{
+    font-family: 'Baloo 2', cursive!important;
+  }
+  .css-1enfqgf-MuiListItem-root {
+    font-family: 'Baloo 2', cursive!important;
+  }
+  .drawerBox{
+    font-family: 'Baloo 2', cursive!important;
+    font-weight: 700;
+  }

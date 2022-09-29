@@ -10,7 +10,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
-
+import './NavDrawer.css'
 
 export default function NavDrawer() {
   const [state, setState] = React.useState({
@@ -26,52 +26,80 @@ export default function NavDrawer() {
   };
 
   const list = (anchor) => (
-    <Box
+    <Box className="drawerBox"
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250, 
-      bgcolor: "#031e45",
-      opacity: "20%",
+      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 225, 
+      /*bgcolor: "#031e45",*/
       color: "#47bfaf",
-      "text-shadow": "0px 2px 5px rgba(0,0,0,0.92)",
-      textShadowColor: "0 0 5px rgba(255,255,255,.5)",
-      marginTop: "3.5rem", }}
+      fontWeight: "750",
+      backgroundColor: "transparent",
+      right: "0",
+      marginTop: "7rem"}}
     >
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+      <List sx={{bgcolor: "transparent",fontSize: "1.2rem" }}>
+        <ListItem sx={{fontSize: "1.2rem" }} button  >
+          <ListItemText sx={{fontSize: "1.2rem" }} disableTypography  primary="Logout"/>
+        </ListItem>
+        <ListItem sx={{fontSize: "1.2rem" }} button>
+          <ListItemText 
+            sx={{fontSize: "1.2rem" }}
+            disableTypography
+            primary="Account"
+          />
+        </ListItem>
+        </List>
+        <List>
+        <ListItem sx={{fontSize: "1.2rem" }} button>
+          <ListItemText
+            sx={{fontSize: "1.2rem" }}
+            disableTypography
+            primary="Switch Pet"
+          />
+        </ListItem>
+        <ListItem sx={{fontSize: "1.2rem" }} button>
+          <ListItemText
+            sx={{fontSize: "1.2rem" }}
+            disableTypography
+            primary="View Pet"
+          />
+
+        </ListItem>
+        </List>
+        <List>
+        <ListItem sx={{fontSize: "1.2rem" }} button>
+          <ListItemText
+            sx={{fontSize: "1.2rem" }}
+            disableTypography 
+            primary="Feeding Tracker"
+          />
+        </ListItem>
+        <ListItem sx={{fontSize: "1.2rem" }} button>
+          <ListItemText
+            sx={{fontSize: "1.2rem" }}
+            disableTypography
+            primary="Weight Tracker"
+          />
+        </ListItem>
+        <ListItem sx={{fontSize: "1.2rem" }} button>
+          <ListItemText
+            sx={{fontSize: "1.2rem" }}
+            disableTypography
+            primary="Add a Tracker"
+          />
+        </ListItem>
+        <ListItem sx={{fontSize: "1.2rem" }} button>
+        </ListItem>
       </List>
     </Box>
   );
 
   return (
-    <div>
+    <div className='burger'>
       {['right'].map((anchor) => (
         <React.Fragment key={anchor}>
-            <MenuIcon
-            color="#47bfaf"
+            <MenuIcon sx={{color: "#47bfaf", height: "10vh", width: "10vh"}}
             onClick={toggleDrawer(anchor, true)}
             fontSize="large"
             >{anchor}</MenuIcon>
@@ -79,6 +107,17 @@ export default function NavDrawer() {
             anchor={anchor}
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
+            sx={{
+              elevation: 0,
+              bgcolor: "transparent",
+              top: "4rem",
+              boxShadow: 0,
+              margin: 0,
+              fontweight: 500,
+              lineheight: "1.5",
+              fontSize: "1.2rem",
+              display: "block",
+            }}
           >
             {list(anchor)}
           </Drawer>

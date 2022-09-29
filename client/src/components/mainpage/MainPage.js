@@ -2,15 +2,8 @@ import React from "react";
 //import { Route, Routes } from "react-router-dom";
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { Grid, Paper} from "@mui/material";
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Button from '@mui/material/Button';
-import Checkbox from '@mui/material/Checkbox';
-
+import { Grid} from "@mui/material";
 import Navbar from '../navbar/Navbar'
-import NavDrawer from "../drawer/NavDrawer";
-
 import  './MainPage.css';
 
 const tfStyle = {
@@ -36,8 +29,7 @@ function MainPage() {
           direction="column"
           alignItems="center"
           justifyContent="center">
-            <Navbar className="Navbar"/>
-            <NavDrawer/>
+          <Navbar className="Navbar"/>
         </Grid>
       </Typography>
     </Box>

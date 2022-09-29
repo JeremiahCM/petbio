@@ -1,5 +1,5 @@
 /* eslint-disable arrow-body-style */
-import mainImage from "../../images/PetBioLogo.png"
+import mainImage from "../../images/PetBioNav.png"
 import './logo.css'
 
 /**
