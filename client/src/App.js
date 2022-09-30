@@ -18,14 +18,12 @@ function App() {
   return (
     <MainPage>
       <Routes>
-
         <Route exact path="/account" element={<AccountPage />} />
         <Route exact path="/add-a-pet" element={<PetForm />} />
-        <Route exact path="/view-pet" element={<PetView />} />
+        <Route path="/view-pet/:id" element={<PetView />} />
         <Route exact path="/petfeeding" element={<PetFeeding />} />
         <Route exact path="/weightform" element={<WeightForm />} />
         <Route exact path="/weightchart" element={<WeightChart />} />
-
       </Routes>
     </MainPage>
   );

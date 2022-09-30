@@ -1,5 +1,9 @@
 import React from "react";
 //import { Route, Routes } from "react-router-dom";
+import Box from '@mui/material/Box';
+import { Grid} from "@mui/material";
+import NavBar from '../navbar/NavBar'
+import  './MainPage.css';
 import {Helmet} from 'react-helmet';
 
 import Box from "@mui/material/Box";
@@ -34,7 +38,7 @@ function MainPage({ children }) {
           direction="column"
           alignItems="center"
           justifyContent="center">
-          <Navbar className="Navbar"/>
+          <NavBar className="Navbar"/>
         </Grid>
         <Grid className="content"
           container
@@ -42,10 +46,9 @@ function MainPage({ children }) {
           direction="column"
           alignItems="center"
           justifyContent="center"
-          sx={{bgcolor: "white", height: "60vh",color: "black"}}>
-          <Box>
-            {children}
-          </Box>
+          sx={{bgcolor: "white", height: "100vh",color: "black"}}
+        >
+          {children}
         </Grid>
     </Box>
   );
