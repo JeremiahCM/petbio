@@ -7,7 +7,7 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./NavDrawer.css";
 import { Link, BrowserRouter as Router } from "react-router-dom";
-import { Select, MenuItem, InputLabel } from "@mui/material";
+import { FormControl, Select, MenuItem, InputLabel } from "@mui/material";
 import { useEffect, useState } from "react";
 import PetView from "../petView/PetView";
 
@@ -65,14 +65,14 @@ export default function NavDrawer() {
           textDecoration: "none",
         }}
       >
-        <ListItem sx={{ fontSize: "1.5rem" }} button>
+        <ListItem key="logout" sx={{ fontSize: "1.5rem" }} button>
           <ListItemText
             sx={{ fontSize: "1.5rem" }}
             disableTypography
             primary="Logout"
           />
         </ListItem>
-        <ListItem sx={{ fontSize: "1.5rem" }} button>
+        <ListItem key="account" sx={{ fontSize: "1.5rem" }} button>
           <Link sx={{ fontSize: "1.5rem" }} to="/account">
             Account
           </Link>
@@ -80,63 +80,57 @@ export default function NavDrawer() {
       </List>
 
       <List>
-        <ListItem sx={{ fontSize: "1.5rem" }} button>
-          <InputLabel sx={{ fontSize: "1.5rem" }}>Select Pet</InputLabel>
+        <ListItem key="select-pet" sx={{ fontSize: "1.5rem" }} button>
+        <FormControl margin="normal">
+          <InputLabel id="select-pet" sx={{ fontSize: "1.5rem" }}>Select Pet</InputLabel>
           <Select
+            id="select-pet"
             sx={{ fontSize: "1.5rem", textDecoration: "none" }}
             disableTypography
             primary="Select Pet"
           >
             <MenuItem key="add-new-pet">
-              <Link sx={{ fontSize: "1.5rem" }} to="/view-pet">
-                View Pet
+              <Link sx={{ fontSize: "1.5rem" }} to="/add-a-pet">
+                Add a new Pet
               </Link>
             </MenuItem>
             {dogNames &&
               dogNames.map((dogName) => (
-                <MenuItem key={dogNames.id}>
                   <Link
                     sx={{ fontSize: "1.5rem" }}
                     to={`/view-pet/${dogName.id}`}
                   >
-                    {dogName.name}
+                    <MenuItem key={dogName.id}>
+                      {dogName.name}
+                    </MenuItem>
                   </Link>
-                </MenuItem>
               ))}
           </Select>
-        </ListItem>
-        <ListItem sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
-          <Link sx={{ fontSize: "1.5rem" }} to="/view-pet">
-            View Pet
-          </Link>
+          </FormControl>
         </ListItem>
       </List>
       <List>
-        <ListItem sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
+        <ListItem key="feeding-tracker" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
           <ListItemText
             sx={{ fontSize: "1.2rem" }}
             disableTypography
             primary="Feeding Tracker"
           />
         </ListItem>
-        <ListItem sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
+        <ListItem key="weight-tracker" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
           <ListItemText
             sx={{ fontSize: "1.2rem" }}
             disableTypography
             primary="Weight Tracker"
           />
         </ListItem>
-        <ListItem sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
+        <ListItem key="add-a-tracker" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
           <ListItemText
             sx={{ fontSize: "1.2rem" }}
             disableTypography
             primary="Add a Tracker"
           />
         </ListItem>
-        <ListItem
-          sx={{ fontSize: "1.5rem", textDecoration: "none" }}
-          button
-        ></ListItem>
       </List>
     </Box>
   );

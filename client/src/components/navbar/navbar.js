@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import NavDrawer from '../drawer/NavDrawer'
 import MainLogo from '../logo/Logo'
-import './Navbar.css'
+import './NavBar.css'
 
 export default function Navbar() {
   return (

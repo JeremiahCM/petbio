@@ -89,7 +89,7 @@ const PetView = () => {
                                         key={row.key}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                     >
-                                        <TableCell>{row.key.charAt(0).toUpperCase() + row.key.slice(1)}</TableCell>
+                                        <TableCell>{row.key.charAt(0).toUpperCase() + row.key.slice(1)}:</TableCell>
                                         <TableCell>{row.value}</TableCell>
                                     </TableRow>
                                 )
