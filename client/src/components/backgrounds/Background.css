@@ -1,0 +1,13 @@
+.BackgroundImage {
+  height: 75vh;
+  top: 35%;
+  left: -10%;
+  position: absolute;
+}
+
+.BackgroundImage-2 {
+  height: 75vh;
+  top: 35%;
+  right: 0%;
+  position: absolute;
+}

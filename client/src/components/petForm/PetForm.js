@@ -3,7 +3,6 @@ import "./PetForm.css";
 import dayjs from "dayjs";
 import { useState } from "react";
 import {
-  Box,
   Button,
   FormControl,
   Grid,
@@ -20,6 +19,11 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { Helmet } from "react-helmet";
 
+/**
+ * This component gives the user a form they can fill out to add their information for a new pet to the database.
+ * When the user submits the form, the information gets sent to the database and saved.
+ * @returns 
+ */
 const PetForm = () => {
   const tfStyle = {
     "& .MuiOutlinedInput-root": {
@@ -35,7 +39,6 @@ const PetForm = () => {
     minWidth: "320px",
   };
 
-
   const [petData, setPetData] = useState({
     name: "",
     species: "",
@@ -46,10 +49,14 @@ const PetForm = () => {
     description: "",
   });
 
+  /**
+   * OnChange handler for form inputs.
+   * Calculates age when a new birthdate is selected
+   * @param {*} e 
+   */
   const updatePetData = (e) => {
     if (e.target.className === "birthdate") {
       setPetData({ ...petData, [e.target.className]: e.target.value });
-
       setPetData({ ...petData, age: calculateAge(e.target.value) });
     }
 
@@ -63,6 +70,10 @@ const PetForm = () => {
     return ageHumanYears;
   };
 
+  /**
+   * Send data to database to save when user clicks the submit button on form
+   * @param {*} e 
+   */
   async function handleSubmit(e) {
     e.preventDefault();
 

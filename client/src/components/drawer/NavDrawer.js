@@ -7,13 +7,38 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./NavDrawer.css";
 import { Link, BrowserRouter as Router } from "react-router-dom";
-import { FormControl, Select, MenuItem, InputLabel } from "@mui/material";
+import { Select, MenuItem, InputLabel, FormControl } from "@mui/material";
+
+
 import { useEffect, useState } from "react";
 import Landing from "../landing/Landing";
-import { Route, Routes } from "react-router-dom";
+
 
 
 export default function NavDrawer() {
+  const tfStyle = {
+    "& .MuiOutlinedInput-root": {
+      color: "#47bfaf",
+      fontFamily: "Montserrat",
+      "&.Mui-focused fieldset": {
+        borderColor: "#47bfaf",
+      },
+      "&:hover fieldset": {
+        borderColor: "#47bfaf",
+      },
+    },
+  };
+  const selStyle = {
+    "& $notchedOutline": {
+      borderColor: "#47bfaf"
+    },
+    "&:hover $notchedOutline": {
+      borderColor: "#47bfaf"
+    },
+    "&$focused $notchedOutline": {
+      borderColor: "#47bfaf"
+    }
+  };
   const [dogNames, setDogNames] = useState(null);
   const [state, setState] = React.useState({
     right: false,
@@ -66,29 +91,35 @@ export default function NavDrawer() {
           textDecoration: "none",
         }}
       >
-        <ListItem key="logout" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
-          <Link sx={{ fontSize: "1.5rem" }} onClick={<Landing></Landing>}>
-            Logout
+        <ListItem key="account" sx={{ fontSize: "1.5rem" }} button>
+          <Link sx={{ fontSize: "1.5rem" }} to="/home">
+            Home
           </Link>
         </ListItem>
 
-       
         <ListItem key="account" sx={{ fontSize: "1.5rem" }} button>
           <Link sx={{ fontSize: "1.5rem" }} to="/account">
             Account
           </Link>
         </ListItem>
+        <ListItem key="logout" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
+          <Link sx={{ fontSize: "1.5rem" }} onClick={<Landing></Landing>}>
+            Logout
+          </Link>
+        </ListItem>
       </List>
-
       <List>
-        <ListItem key="select-pet" sx={{ fontSize: "1.5rem" }} button>
-        <FormControl margin="normal">
-          <InputLabel id="select-pet" sx={{ fontSize: "1.5rem" }}>Select Pet</InputLabel>
+        <ListItem key="select-pet" sx={{ fontSize: "1.5rem",width: "100%" }} button>
+        <FormControl fullWidth>
+          <InputLabel id="select-pet" className="petSelect" sx={{ fontSize: "1.5rem"}}>Select Pet</InputLabel>
           <Select
             id="select-pet"
-            sx={{ fontSize: "1.5rem", textDecoration: "none" }}
+            sx={{ fontSize: "1.5rem", textDecoration: "none"}}
             disableTypography
             primary="Select Pet"
+            className="petSelect"
+            label="Select Pet"
+            labelId="select-pet"
           >
             <MenuItem key="add-new-pet">
               <Link sx={{ fontSize: "1.5rem" }} to="/add-a-pet">
@@ -124,7 +155,7 @@ export default function NavDrawer() {
         </ListItem>
         <ListItem key="add-a-tracker" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
           <ListItemText
-            sx={{ fontSize: "1.2rem" }}
+            sx={{ fontSize: "1.5rem" }}
             disableTypography
             primary="Add a Tracker"
           />
