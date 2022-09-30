@@ -1,0 +1,15 @@
+.homeLogo{
+    width: 40%;
+    height: 25%;
+    margin-top: 5%;
+}
+.gradient {
+    background: linear-gradient(359deg, #47bfaf, #031e45);
+    background-size: 400% 400%;
+    background-repeat: no-repeat;
+    animation: AnimationName 30s ease infinite;
+    height: 100vh;
+    margin: 0;
+    left: 0;
+    font-family: 'Montserrat', sans-serif;
+}

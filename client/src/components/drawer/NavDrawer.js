@@ -168,7 +168,7 @@ export default function NavDrawer() {
       {["right"].map((anchor) => (
         <React.Fragment key={anchor}>
           <MenuIcon
-            sx={{ color: "white", height: "10vh", width: "10vh" }}
+            sx={{ color: "#47bfaf", height: "10vh", width: "10vh" }}
 
             onClick={toggleDrawer(anchor, true)}
             fontSize="large"
