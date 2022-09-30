@@ -1,25 +1,28 @@
 import React from "react";
 //import { Route, Routes } from "react-router-dom";
-import Box from '@mui/material/Box';
-import { Grid} from "@mui/material";
-import Navbar from '../navbar/Navbar'
-import  './MainPage.css';
 import {Helmet} from 'react-helmet';
 
-const tfStyle = {
-    "& .MuiOutlinedInput-root": {
-        color: "#47bfaf",
-        fontFamily: 'Montserrat',
-      "&.Mui-focused fieldset": {
-        borderColor: "#47bfaf"
-      },
-      '&:hover fieldset': {
-        borderColor: '#47bfaf',
-      },
-    }
-  } 
+import Box from "@mui/material/Box";
+import { Grid } from "@mui/material";
+import NavBar from "../navbar/NavBar";
+import Paper from "@mui/material/Paper";
+import "./MainPage.css";
+import TestChart from "../testchart/TestChart";
 
-function MainPage({children}) {
+const tfStyle = {
+  "& .MuiOutlinedInput-root": {
+    color: "#47bfaf",
+    fontFamily: "Montserrat",
+    "&.Mui-focused fieldset": {
+      borderColor: "#47bfaf",
+    },
+    "&:hover fieldset": {
+      borderColor: "#47bfaf",
+    },
+  },
+};
+
+function MainPage({ children }) {
   return (
     <Box className="App">
       <Helmet>

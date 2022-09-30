@@ -7,8 +7,11 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./NavDrawer.css";
 import { Link, BrowserRouter as Router } from "react-router-dom";
+
 import { Select, MenuItem, InputLabel } from "@mui/material";
 import { useEffect, useState } from "react";
+import Landing from "../landing/Landing";
+import { Route, Routes } from "react-router-dom";
 
 
 export default function NavDrawer() {
@@ -16,7 +19,6 @@ export default function NavDrawer() {
   const [state, setState] = React.useState({
     right: false,
   });
-
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -65,13 +67,19 @@ export default function NavDrawer() {
           textDecoration: "none",
         }}
       >
+        <ListItem sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
+          <Link sx={{ fontSize: "1.5rem" }} onClick={<Landing></Landing>}>
+            Logout
+          </Link>
+        </ListItem>
         <ListItem sx={{ fontSize: "1.5rem" }} button>
           <ListItemText
-            sx={{ fontSize: "1.5rem" }}
+            sx={{ fontSize: "1.5rem", textDecoration: "none" }}
             disableTypography
             primary="Logout"
           />
         </ListItem>
+
         <ListItem sx={{ fontSize: "1.5rem" }} button>
           <Link sx={{ fontSize: "1.5rem" }} to="/account">
             Account
@@ -107,20 +115,18 @@ export default function NavDrawer() {
           </Link>
         </ListItem>
       </List>
-      <List>
+           <List>
         <ListItem sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
-          <ListItemText
-            sx={{ fontSize: "1.2rem" }}
-            disableTypography
-            primary="Feeding Tracker"
-          />
+          <Link sx={{ fontSize: "1.5rem" }} to="/petfeeding">
+            Feeding Tracker
+          </Link>
+     
         </ListItem>
         <ListItem sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
-          <ListItemText
-            sx={{ fontSize: "1.2rem" }}
-            disableTypography
-            primary="Weight Tracker"
-          />
+         <Link sx={{ fontSize: "1.5rem" }} to="/weightform">
+            Weight Tracker
+          </Link>
+          
         </ListItem>
         <ListItem sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
           <ListItemText
@@ -143,6 +149,7 @@ export default function NavDrawer() {
         <React.Fragment key={anchor}>
           <MenuIcon
             sx={{ color: "white", height: "10vh", width: "10vh" }}
+
             onClick={toggleDrawer(anchor, true)}
             fontSize="large"
           >
