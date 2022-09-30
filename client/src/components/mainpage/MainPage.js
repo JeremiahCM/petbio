@@ -19,7 +19,7 @@ const tfStyle = {
     }
   } 
 
-function MainPage() {
+function MainPage({children}) {
   return (
     <Box className="App">
         <Grid
@@ -39,6 +39,7 @@ function MainPage() {
           sx={{bgcolor: "white", height: "100vh",color: "black"}}>
 
         </Grid>
+
     </Box>
   );
 }
