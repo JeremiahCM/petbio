@@ -1,12 +1,11 @@
 import React from "react";
 //import { Route, Routes } from "react-router-dom";
+import Box from '@mui/material/Box';
+import { Grid} from "@mui/material";
+import NavBar from '../navbar/NavBar'
+import  './MainPage.css';
 import {Helmet} from 'react-helmet';
-
-import Box from "@mui/material/Box";
-import { Grid } from "@mui/material";
-import NavBar from "../navbar/NavBar";
 import Paper from "@mui/material/Paper";
-import "./MainPage.css";
 import TestChart from "../testchart/TestChart";
 
 
@@ -30,9 +29,16 @@ function MainPage({ children }) {
           direction="column"
           alignItems="center"
           justifyContent="center"
+<<<<<<< HEAD
           sx={{bgcolor: "white", height: "100vh",color: "black"}}>
 
             {children}
+=======
+
+          sx={{bgcolor: "white", height: "100vh",color: "black"}}
+        >
+          {children}
+>>>>>>> 47d49439aaaceb77dd694d986fb969c0e34734c3
 
         </Grid>
     </Box>
