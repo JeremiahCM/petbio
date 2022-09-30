@@ -8,8 +8,8 @@ import './Navbar.css'
 
 export default function Navbar() {
   return (
-    <Box sx={{ flexGrow: 1, bgcolor: "white",}} className="NavbarToolbar">
-      <AppBar position="static" sx={{ flexGrow: 1, bgcolor: "white", boxShadow: "none"}}>
+    <Box sx={{ flexGrow: 1, bgcolor: "white"}} className="NavbarToolbar">
+      <AppBar position="static" sx={{ flexGrow: 1, bgcolor: "#47bfaf", boxShadow: "none"}}>
         <Toolbar sx={{justifyContent: "space-between"}}>
         <MainLogo/>
           <NavDrawer></NavDrawer>

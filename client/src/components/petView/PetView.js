@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Box, Grid, TableContainer, Table, TableBody, TableRow, TableCell, Typography } from '@mui/material';
 import { useParams, useNavigate } from "react-router"
 import React from 'react';
+import Helmet from 'react-helmet';
 
 const PetView = () => {
     /*const [petData, setPetData] = useState({
@@ -65,6 +66,9 @@ const PetView = () => {
         <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center">
             <Typography variant="h3">{petData.name}{petData.name.charAt(petData.name.length - 1) === 's' ? '\'' : "'s"} Biography</Typography>
             <Box className="pet-view">
+                <Helmet>
+                    <title>View Pet | PetBio</title>
+                </Helmet>
                 <TableContainer>
                     <Table sx={{ minWidth: 500 }} aria-label="simple-table">
                     <TableBody>
