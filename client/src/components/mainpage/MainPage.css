@@ -8,16 +8,7 @@ css rules:
 font-family: 'Baloo 2', cursive;
 font-family: 'Montserrat', sans-serif;
 */
-*{
-    font-family: 'Montserrat', sans-serif!important;
-}
 
-
-@keyframes AnimationName {
-    0%{background-position:50% 0%}
-    50%{background-position:51% 100%}
-    100%{background-position:50% 0%}
-}
 .heading{
     font-family: 'Baloo 2', cursive!important;
 }

@@ -5,3 +5,6 @@
 .NavbarToolbar{
     width: 100%;
 }
+.burger{
+    display: inline;
+}

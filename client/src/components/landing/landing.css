@@ -8,9 +8,6 @@ css rules:
 font-family: 'Baloo 2', cursive;
 font-family: 'Montserrat', sans-serif;
 */
-*{
-    font-family: 'Montserrat', sans-serif!important;
-}
 .landing {
     background: linear-gradient(359deg, #47bfaf, #031e45);
     background-size: 400% 400%;
@@ -19,6 +16,7 @@ font-family: 'Montserrat', sans-serif;
     height: 100vh;
     margin: 0;
     left: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 html {
     box-sizing: border-box;
