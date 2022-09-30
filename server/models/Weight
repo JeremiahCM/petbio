@@ -1,0 +1,20 @@
+const mongoose = require("mongoose");
+
+const WeightSchema = new mongoose.Schema({
+  id: {
+    type: String,
+    require: true,
+  },
+  weight: {
+    type: String,
+    require: true,
+  },
+
+  date: {
+    type: Date,
+    require: true,
+  },
+});
+
+const Weight = mongoose.model("Weight", WeightSchema);
+module.exports = Weight;

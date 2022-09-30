@@ -9,14 +9,15 @@ import "./NavDrawer.css";
 import { Link, BrowserRouter as Router } from "react-router-dom";
 import { FormControl, Select, MenuItem, InputLabel } from "@mui/material";
 import { useEffect, useState } from "react";
-import PetView from "../petView/PetView";
+import Landing from "../landing/Landing";
+import { Route, Routes } from "react-router-dom";
+
 
 export default function NavDrawer() {
   const [dogNames, setDogNames] = useState(null);
   const [state, setState] = React.useState({
     right: false,
   });
-
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -65,9 +66,14 @@ export default function NavDrawer() {
           textDecoration: "none",
         }}
       >
-        <ListItem key="logout" sx={{ fontSize: "1.5rem" }} button>
+        <ListItem key="logout" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
+          <Link sx={{ fontSize: "1.5rem" }} onClick={<Landing></Landing>}>
+            Logout
+          </Link>
+        </ListItem>
+        <ListItem sx={{ fontSize: "1.5rem" }} button>
           <ListItemText
-            sx={{ fontSize: "1.5rem" }}
+            sx={{ fontSize: "1.5rem", textDecoration: "none" }}
             disableTypography
             primary="Logout"
           />
@@ -109,20 +115,17 @@ export default function NavDrawer() {
           </FormControl>
         </ListItem>
       </List>
-      <List>
+        <List>
         <ListItem key="feeding-tracker" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
-          <ListItemText
-            sx={{ fontSize: "1.2rem" }}
-            disableTypography
-            primary="Feeding Tracker"
-          />
+          <Link sx={{ fontSize: "1.5rem" }} to="/petfeeding">
+            Feeding Tracker
+          </Link>
+     
         </ListItem>
         <ListItem key="weight-tracker" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
-          <ListItemText
-            sx={{ fontSize: "1.2rem" }}
-            disableTypography
-            primary="Weight Tracker"
-          />
+         <Link sx={{ fontSize: "1.5rem" }} to="/weightform">
+            Weight Tracker
+         </Link>
         </ListItem>
         <ListItem key="add-a-tracker" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
           <ListItemText
@@ -141,6 +144,7 @@ export default function NavDrawer() {
         <React.Fragment key={anchor}>
           <MenuIcon
             sx={{ color: "white", height: "10vh", width: "10vh" }}
+
             onClick={toggleDrawer(anchor, true)}
             fontSize="large"
           >

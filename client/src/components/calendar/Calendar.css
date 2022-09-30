@@ -1,0 +1,18 @@
+.DisplayTable {
+  height: 300px;
+  overflow: scroll;
+}
+
+.Event {
+  margin: "2.5%";
+}
+
+.FeedingTracker {
+  background-color: #ffffff !important;
+  width: max-content;
+  color: #47bfaf;
+  font-family: "Montserrat", sans-serif !important;
+  width: auto;
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5) !important;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5) !important;
+}
