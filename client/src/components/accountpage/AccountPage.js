@@ -1,8 +1,10 @@
 import { Button, Grid, Typography, Paper, TextField } from "@mui/material";
 import "./accountpage.css";
 import { Helmet } from "react-helmet";
-import { useEffect, useState } from "react";
+import { Link } from "react";
 import MainPage from "../mainpage/MainPage";
+
+import Home from "../home/Home";
 
 const tfStyle = {
   "& .MuiOutlinedInput-root": {
@@ -91,27 +93,9 @@ function AccountPage() {
         Save
       </Button>
 
-      <Button
-        type="submit"
-        width="50%"
-        variant="contained"
-        sx={{
-          mt: 3,
-          mb: 2,
-          ml: 2,
-          backgroundColor: "#47bfaf",
-          ":hover": {
-            bgcolor: "#031e45",
-            color: "white",
-            
-          },
-        }}
-        onClick={() => {
-          <MainPage></MainPage>;
-        }}
-      >
-        Return
-      </Button>
+      
+
+   
     </Paper>
   );
 }
