@@ -1,7 +1,10 @@
-import { Grid, Typography, Paper, TextField } from "@mui/material";
+import { Button, Grid, Typography, Paper, TextField } from "@mui/material";
 import "./accountpage.css";
 import { Helmet } from "react-helmet";
-import { useEffect, useState} from 'react';
+import { Link } from "react";
+import MainPage from "../mainpage/MainPage";
+
+import Home from "../home/Home";
 
 const tfStyle = {
   "& .MuiOutlinedInput-root": {
@@ -17,7 +20,6 @@ const tfStyle = {
 };
 
 function AccountPage() {
-
   return (
     <Paper variant="elevation" elevation={16} sx={{ p: 8 }}>
       <Helmet>
@@ -38,9 +40,6 @@ function AccountPage() {
         alignItems="center"
         justifyContent="center"
       >
-        <Typography component="h1" variant="h5">
-          Email
-        </Typography>
         <TextField
           sx={tfStyle}
           margin="normal"
@@ -52,7 +51,51 @@ function AccountPage() {
           autoComplete="email"
           autoFocus
         />
+
+        <TextField
+          sx={tfStyle}
+          margin="normal"
+          required
+          width="50%"
+          id="password"
+          label="Password"
+          name="password"
+          autoComplete="password"
+          autoFocus
+        />
+
+        <TextField
+          sx={tfStyle}
+          margin="normal"
+          required
+          width="50%"
+          id="password"
+          label="Confirm Password"
+          name="password"
+          autoComplete="password"
+          autoFocus
+        />
       </Grid>
+      <Button
+        type="submit"
+        width="50%"
+        variant="contained"
+        sx={{
+          mt: 3,
+          mb: 2,
+          backgroundColor: "#47bfaf",
+          ":hover": {
+            bgcolor: "#031e45",
+            color: "white",
+          },
+        }}
+      >
+        Save
+      </Button>
+
+      
+
+   
     </Paper>
   );
 }
