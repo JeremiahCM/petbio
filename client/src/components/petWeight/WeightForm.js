@@ -26,7 +26,7 @@ export default function WeightForm() {
         alignItems="center"
         justifyContent="center"
       >
-        <Typography className="formHeader" sx={{ mt: 2, marginTop: "5%" }}>
+        <Typography className="formHeader" sx={{ mt: 2, marginTop: "5%", color: "#47bfaf" }}>
           Enter Pets Weight
         </Typography>
         <TextField

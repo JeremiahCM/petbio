@@ -15,7 +15,7 @@ font-family: 'Montserrat', sans-serif;
     height: 25%;
 }
 .gradient {
-    background: linear-gradient(359deg, #47bfaf, #031e45);
+    background: linear-gradient(180deg, #47bfaf, #031e45);
     background-size: 400% 400%;
     background-repeat: no-repeat;
     animation: AnimationName 30s ease infinite;
