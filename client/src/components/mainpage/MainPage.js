@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import { Grid} from "@mui/material";
 import Navbar from '../navbar/Navbar'
 import  './MainPage.css';
+import {Helmet} from 'react-helmet';
 
 const tfStyle = {
     "& .MuiOutlinedInput-root": {
@@ -21,6 +22,9 @@ const tfStyle = {
 function MainPage({children}) {
   return (
     <Box className="App">
+      <Helmet>
+        <title>Home |  PetBio</title>
+        </Helmet>
         <Grid
           container
           spacing={0}
@@ -35,7 +39,7 @@ function MainPage({children}) {
           direction="column"
           alignItems="center"
           justifyContent="center"
-          sx={{bgcolor: "white", height: "100vh",color: "black"}}>
+          sx={{bgcolor: "white", height: "60vh",color: "black"}}>
           <Box>
             {children}
           </Box>
