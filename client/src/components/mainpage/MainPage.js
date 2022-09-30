@@ -37,9 +37,10 @@ function MainPage({children}) {
           alignItems="center"
           justifyContent="center"
           sx={{bgcolor: "white", height: "100vh",color: "black"}}>
-
+          <Box>
+            {children}
+          </Box>
         </Grid>
-
     </Box>
   );
 }
