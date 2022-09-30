@@ -1,15 +1,13 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Box } from "@mui/material";
 import Landing from "./components/landing/Landing";
 import MainPage from "./components/mainpage/MainPage";
 import PetForm from "./components/petForm/PetForm";
 import PetView from "./components/petView/PetView";
-import PetWeight from "./components/petWeight/PetWeight";
-
+import WeightChart from "./components/petWeight/WeightChart";
+import WeightForm from "./components/petWeight/WeightForm";
 function App() {
   const [isSignedIn, setSignIn] = React.useState(false);
-
   if (isSignedIn === false) {
     return <Landing signedIn={setSignIn} />;
   }
@@ -18,7 +16,8 @@ function App() {
       <Routes>
         <Route exact path="/petform" element={<PetForm />} />
         <Route exact path="/petview" element={<PetView />} />
-        <Route exact path="/petweight" element={<PetWeight />} />
+        <Route exact path="/weightform" element={<WeightForm />} />
+        <Route exact path="/weightchart" element={<WeightChart />} />
       </Routes>
     </MainPage>
   );

@@ -7,12 +7,13 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./NavDrawer.css";
 import { Link, BrowserRouter as Router } from "react-router-dom";
+import Landing from "../landing/Landing";
+import { Route, Routes } from "react-router-dom";
 
 export default function NavDrawer() {
   const [state, setState] = React.useState({
     right: false,
   });
-
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -48,12 +49,10 @@ export default function NavDrawer() {
           textDecoration: "none",
         }}
       >
-        <ListItem sx={{ fontSize: "1.5rem" }} button>
-          <ListItemText
-            sx={{ fontSize: "1.5rem" }}
-            disableTypography
-            primary="Logout"
-          />
+        <ListItem sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
+          <Link sx={{ fontSize: "1.5rem" }} onClick={<Landing></Landing>}>
+            Logout
+          </Link>
         </ListItem>
         <ListItem sx={{ fontSize: "1.5rem" }} button>
           <ListItemText
@@ -84,7 +83,7 @@ export default function NavDrawer() {
           />
         </ListItem>
         <ListItem sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
-          <Link sx={{ fontSize: "1.5rem" }} to="/petweight">
+          <Link sx={{ fontSize: "1.5rem" }} to="/weightform">
             Weight Tracker
           </Link>
         </ListItem>
