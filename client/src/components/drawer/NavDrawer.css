@@ -8,7 +8,10 @@ css rules:
 font-family: 'Baloo 2', cursive;
 font-family: 'Montserrat', sans-serif;
 */
-
+a, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: inherit;
+}
 .css-1160xiw-MuiPaper-root-MuiDrawer-paper {
     background: 0 !important;
     top: 4rem !important;
