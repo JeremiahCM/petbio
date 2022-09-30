@@ -17,7 +17,7 @@ function App() {
       <Routes>
         <Route exact path="/account" element={<AccountPage />} />
         <Route exact path="/add-a-pet" element={<PetForm />} />
-        <Route exact path="/view-pet" element={<PetView />} />
+        <Route path="/view-pet/:id" element={<PetView />} />
       </Routes>
     </MainPage>
   );

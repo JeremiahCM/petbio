@@ -39,6 +39,9 @@ export default function NavDrawer() {
     };
 
     fetchDogNames();
+
+    console.log("The dog names");
+    console.log(dogNames);
   }, []);
 
   const list = (anchor) => (
@@ -92,8 +95,7 @@ export default function NavDrawer() {
                 <MenuItem key={dogNames._id}>
                   <Link
                     sx={{ fontSize: "1.5rem" }}
-                    to="/view-pet"
-                    onClick={getDogName(dogNames._id)}
+                    to={`/view-pet/${dogName.name}`}
                   >
                     {dogName.name}
                   </Link>

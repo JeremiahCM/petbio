@@ -39,8 +39,11 @@ const PetView = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const name = params.name;
-            const response = await fetch(`http://localhost:5000/pets/view/${params.name.toString()}`)
+            const id = params.id.toString();
+
+            console.log(params.id);
+
+            const response = await fetch(`http://localhost:5000/pets/view/${params.id.toString()}`)
 
             if (!response.ok) {
                 const message = `An error has occurred: ${response.statusText}`;
@@ -52,7 +55,7 @@ const PetView = () => {
 
             const pet = await response.json();
             if (!pet) {
-                window.alert(`Pet with name ${name} not found`);
+                window.alert(`Pet with name ${id} not found`);
                 navigate("/");
                 return;
             }
