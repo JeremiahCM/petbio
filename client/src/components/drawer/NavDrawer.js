@@ -69,21 +69,21 @@ export default function NavDrawer() {
         <List>
         <ListItem sx={{fontSize: "1.5rem", textDecoration: "none"    }} button>
           <ListItemText
-            sx={{fontSize: "1.2rem" }}
+            sx={{fontSize: "1.5rem"}}
             disableTypography 
             primary="Feeding Tracker"
           />
         </ListItem>
         <ListItem sx={{fontSize: "1.5rem", textDecoration: "none"    }} button>
           <ListItemText
-            sx={{fontSize: "1.2rem" }}
+            sx={{fontSize: "1.5rem"}}
             disableTypography
             primary="Weight Tracker"
           />
         </ListItem>
         <ListItem sx={{fontSize: "1.5rem", textDecoration: "none"    }} button>
           <ListItemText
-            sx={{fontSize: "1.2rem" }}
+            sx={{fontSize: "1.5rem"}}
             disableTypography
             primary="Add a Tracker"
           />
