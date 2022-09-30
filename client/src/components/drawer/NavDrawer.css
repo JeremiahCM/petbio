@@ -38,3 +38,14 @@ a, a:visited, a:hover, a:active {
     font-family: 'Baloo 2', cursive!important;
     font-weight: 700;
   }
+  .petSelect{
+    font-family: 'Baloo 2', cursive!important;
+    font-weight: 700;
+    color: #47bfaf!important;
+  }
+  .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon{
+    color: #47bfaf!important;
+  }
+  .css-1d3z3hw-MuiOutlinedInput-notchedOutline{
+    color: #47bfaf!important;
+  }

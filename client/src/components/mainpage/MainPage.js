@@ -9,18 +9,6 @@ import Paper from "@mui/material/Paper";
 import "./MainPage.css";
 import TestChart from "../testchart/TestChart";
 
-const tfStyle = {
-  "& .MuiOutlinedInput-root": {
-    color: "#47bfaf",
-    fontFamily: "Montserrat",
-    "&.Mui-focused fieldset": {
-      borderColor: "#47bfaf",
-    },
-    "&:hover fieldset": {
-      borderColor: "#47bfaf",
-    },
-  },
-};
 
 function MainPage({ children }) {
   return (
@@ -34,7 +22,7 @@ function MainPage({ children }) {
           direction="column"
           alignItems="center"
           justifyContent="center">
-          <Navbar className="Navbar"/>
+          <NavBar className="Navbar"/>
         </Grid>
         <Grid className="content"
           container
@@ -42,10 +30,10 @@ function MainPage({ children }) {
           direction="column"
           alignItems="center"
           justifyContent="center"
-          sx={{bgcolor: "white", height: "60vh",color: "black"}}>
-          <Box>
+          sx={{bgcolor: "white", height: "100vh",color: "black"}}>
+
             {children}
-          </Box>
+
         </Grid>
     </Box>
   );

@@ -7,14 +7,36 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./NavDrawer.css";
 import { Link, BrowserRouter as Router } from "react-router-dom";
-
-import { Select, MenuItem, InputLabel } from "@mui/material";
+import { Select, MenuItem, InputLabel, FormControl } from "@mui/material";
 import { useEffect, useState } from "react";
 import Landing from "../landing/Landing";
-import { Route, Routes } from "react-router-dom";
+
 
 
 export default function NavDrawer() {
+  const tfStyle = {
+    "& .MuiOutlinedInput-root": {
+      color: "#47bfaf",
+      fontFamily: "Montserrat",
+      "&.Mui-focused fieldset": {
+        borderColor: "#47bfaf",
+      },
+      "&:hover fieldset": {
+        borderColor: "#47bfaf",
+      },
+    },
+  };
+  const selStyle = {
+    "& $notchedOutline": {
+      borderColor: "#47bfaf"
+    },
+    "&:hover $notchedOutline": {
+      borderColor: "#47bfaf"
+    },
+    "&$focused $notchedOutline": {
+      borderColor: "#47bfaf"
+    }
+  };
   const [dogNames, setDogNames] = useState(null);
   const [state, setState] = React.useState({
     right: false,
@@ -73,41 +95,36 @@ export default function NavDrawer() {
           </Link>
         </ListItem>
         <ListItem sx={{ fontSize: "1.5rem" }} button>
-          <ListItemText
-            sx={{ fontSize: "1.5rem", textDecoration: "none" }}
-            disableTypography
-            primary="Logout"
-          />
-        </ListItem>
-
-        <ListItem sx={{ fontSize: "1.5rem" }} button>
           <Link sx={{ fontSize: "1.5rem" }} to="/account">
             Account
           </Link>
         </ListItem>
       </List>
-
       <List>
         <ListItem sx={{ fontSize: "1.5rem" }} button>
-          <InputLabel sx={{ fontSize: "1.5rem" }}>Select Pet</InputLabel>
+        <FormControl fullWidth>
+          <InputLabel id="select-pet"className="petSelect"sx={{ fontSize: "1.5rem" }}>Select Pet</InputLabel>
           <Select
-            sx={{ fontSize: "1.5rem", textDecoration: "none" }}
-            disableTypography
+            sx={{ borderColor: "#47bfaf", fontSize: "1.5rem", textDecoration: "none", width: "100%",}}
             primary="Select Pet"
+            className="petSelect"
+            label="Select Pet"
+            labelId="select-pet"
           >
             {dogNames &&
-              dogNames.map((dogName) => (
-                <MenuItem key={dogNames._id}>
+              dogNames.map((dogName) => (  
                   <Link
                     sx={{ fontSize: "1.5rem" }}
                     to="/view-pet"
                     onClick={(dogNames._id)}
                   >
+                    <MenuItem key={dogNames._id}>
                     {dogName.name}
+                    </MenuItem>
                   </Link>
-                </MenuItem>
               ))}
           </Select>
+        </FormControl>
         </ListItem>
         <ListItem sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
           <Link sx={{ fontSize: "1.5rem" }} to="/view-pet">
@@ -130,7 +147,7 @@ export default function NavDrawer() {
         </ListItem>
         <ListItem sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
           <ListItemText
-            sx={{ fontSize: "1.2rem" }}
+            sx={{ fontSize: "1.5rem" }}
             disableTypography
             primary="Add a Tracker"
           />
