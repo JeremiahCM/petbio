@@ -16,7 +16,6 @@ const PetView = () => {
                     <TableBody>
                         {petData?.map((value) => (
                             <TableRow
-                                
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
                                 <TableCell>ID</TableCell>
