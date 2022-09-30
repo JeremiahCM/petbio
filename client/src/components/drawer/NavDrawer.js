@@ -37,57 +37,58 @@ export default function NavDrawer() {
       fontWeight: "750",
       backgroundColor: "transparent",
       right: "0",
-      marginTop: "7rem"}}
+      marginTop: "7rem",
+      textDecoration: "none"  }}
     >
-      <List sx={{bgcolor: "transparent",fontSize: "1.2rem" }}>
-        <ListItem sx={{fontSize: "1.2rem" }} button  >
-          <ListItemText sx={{fontSize: "1.2rem" }} disableTypography  primary="Logout"/>
+      <List sx={{bgcolor: "transparent",fontSize: "1.5rem",textDecoration: "none"  }}>
+        <ListItem sx={{fontSize: "1.5rem", }} button  >
+          <ListItemText sx={{fontSize: "1.5rem", }} disableTypography  primary="Logout"/>
         </ListItem>
-        <ListItem sx={{fontSize: "1.2rem" }} button>
+        <ListItem sx={{fontSize: "1.5rem", }} button>
           <ListItemText 
-            sx={{fontSize: "1.2rem" }}
+            sx={{fontSize: "1.5rem", textDecoration: "none"   }}
             disableTypography
             primary="Account"
           />
         </ListItem>
         </List>
         <List>
-        <ListItem sx={{fontSize: "1.2rem" }} button>
+        <ListItem sx={{fontSize: "1.5rem", textDecoration: "none"    }} button>
           <Link
-            sx={{fontSize: "1.2rem" }}
+            sx={{fontSize: "1.5rem", }}
             to="/petform"
           >Switch Pet</Link>
         </ListItem>
-        <ListItem sx={{fontSize: "1.2rem" }} button>
+        <ListItem sx={{fontSize: "1.5rem", textDecoration: "none"    }} button>
         <Link
-            sx={{fontSize: "1.2rem" }}
+            sx={{fontSize: "1.5rem", }}
             to="/petview"
           >View Pet</Link>
         </ListItem>
         </List>
         <List>
-        <ListItem sx={{fontSize: "1.2rem" }} button>
+        <ListItem sx={{fontSize: "1.5rem", textDecoration: "none"    }} button>
           <ListItemText
             sx={{fontSize: "1.2rem" }}
             disableTypography 
             primary="Feeding Tracker"
           />
         </ListItem>
-        <ListItem sx={{fontSize: "1.2rem" }} button>
+        <ListItem sx={{fontSize: "1.5rem", textDecoration: "none"    }} button>
           <ListItemText
             sx={{fontSize: "1.2rem" }}
             disableTypography
             primary="Weight Tracker"
           />
         </ListItem>
-        <ListItem sx={{fontSize: "1.2rem" }} button>
+        <ListItem sx={{fontSize: "1.5rem", textDecoration: "none"    }} button>
           <ListItemText
             sx={{fontSize: "1.2rem" }}
             disableTypography
             primary="Add a Tracker"
           />
         </ListItem>
-        <ListItem sx={{fontSize: "1.2rem" }} button>
+        <ListItem sx={{fontSize: "1.5rem", textDecoration: "none"    }} button>
         </ListItem>
       </List>
     </Box>

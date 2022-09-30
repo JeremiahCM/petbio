@@ -1,7 +1,6 @@
 import React from "react";
 //import { Route, Routes } from "react-router-dom";
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import { Grid} from "@mui/material";
 import Navbar from '../navbar/Navbar'
 import  './MainPage.css';
