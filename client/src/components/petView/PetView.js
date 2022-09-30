@@ -29,6 +29,12 @@ const PetView = () => {
     const params = useParams();
     const navigate = useNavigate();
 
+    var drawerId;
+
+    const getDogName = (id) => {
+        drawerId = id;
+    }
+
     let petDataKeyValues = Object.entries(petData).map(([key, value]) => ({key,value}));
 
     useEffect(() => {
