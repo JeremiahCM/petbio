@@ -91,22 +91,22 @@ export default function NavDrawer() {
           textDecoration: "none",
         }}
       >
-        <ListItem key="account" sx={{ fontSize: "1.5rem" }} button>
-          <Link sx={{ fontSize: "1.5rem" }} to="/home">
+        <Link sx={{ fontSize: "1.5rem" }} to="/home">
+          <ListItem key="account" sx={{ fontSize: "1.5rem" }} button>
             Home
-          </Link>
-        </ListItem>
+          </ListItem>
+        </Link>
 
-        <ListItem key="account" sx={{ fontSize: "1.5rem" }} button>
-          <Link sx={{ fontSize: "1.5rem" }} to="/account">
+        <Link sx={{ fontSize: "1.5rem" }} to="/account">
+          <ListItem key="account" sx={{ fontSize: "1.5rem" }} button>
             Account
-          </Link>
-        </ListItem>
-        <ListItem key="logout" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
-          <Link sx={{ fontSize: "1.5rem" }} onClick={<Landing></Landing>}>
+          </ListItem>
+        </Link>
+        <Link sx={{ fontSize: "1.5rem" }} onClick={<Landing></Landing>}>
+          <ListItem key="logout" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
             Logout
-          </Link>
-        </ListItem>
+          </ListItem>
+        </Link>
       </List>
       <List>
         <ListItem key="select-pet" sx={{ fontSize: "1.5rem",width: "100%" }} button>
@@ -141,18 +141,17 @@ export default function NavDrawer() {
           </FormControl>
         </ListItem>
       </List>
-        <List>
-        <ListItem key="feeding-tracker" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
-          <Link sx={{ fontSize: "1.5rem" }} to="/petfeeding">
+      <List>
+        <Link sx={{ fontSize: "1.5rem" }} to="/petfeeding">
+          <ListItem key="feeding-tracker" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
             Feeding Tracker
-          </Link>
-     
-        </ListItem>
-        <ListItem key="weight-tracker" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
-         <Link sx={{ fontSize: "1.5rem" }} to="/weightform">
+          </ListItem>
+        </Link>
+        <Link sx={{ fontSize: "1.5rem" }} to="/weightform">
+          <ListItem key="weight-tracker" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
             Weight Tracker
-         </Link>
-        </ListItem>
+          </ListItem>
+        </Link>
         <ListItem key="add-a-tracker" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
           <ListItemText
             sx={{ fontSize: "1.5rem" }}
