@@ -5,6 +5,7 @@ import Landing from "./components/landing/Landing";
 import MainPage from "./components/mainpage/MainPage";
 import PetForm from "./components/petForm/PetForm";
 import PetView from "./components/petView/PetView";
+import PetFeeding from "./components/petFeeding/PetFeeding";
 import PetWeight from "./components/petWeight/PetWeight";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route exact path="/petform" element={<PetForm />} />
         <Route exact path="/petview" element={<PetView />} />
+        <Route exact path="/petfeeding" element={<PetFeeding />} />
         <Route exact path="/petweight" element={<PetWeight />} />
       </Routes>
     </MainPage>

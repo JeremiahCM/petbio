@@ -77,11 +77,9 @@ export default function NavDrawer() {
       </List>
       <List>
         <ListItem sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
-          <ListItemText
-            sx={{ fontSize: "1.5rem" }}
-            disableTypography
-            primary="Feeding Tracker"
-          />
+          <Link sx={{ fontSize: "1.5rem" }} to="/petfeeding">
+            Feeding Tracker
+          </Link>
         </ListItem>
         <ListItem sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
           <Link sx={{ fontSize: "1.5rem" }} to="/petweight">
