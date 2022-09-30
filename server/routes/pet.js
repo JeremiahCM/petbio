@@ -34,6 +34,11 @@ router.get("/view/:name", (req, res) => {
     db_connect.collection(collectionName).findOne({name: req.params.name}).then((Bio) => res.json(Bio)).catch((err) => res.status(404).json())
 });
 
+router.get("/view-all", (req, res) => {
+    let db_connect = dbo.getDatabase();
+
+    db_connect.collection(collectionName).find().toArray().then((Bio) => res.json(Bio)).catch((err) => res.status(404).json())
+});
 
 
 module.exports = router;

@@ -85,7 +85,6 @@ function Landing({signedIn}) {
               type="submit"
               width="50%"
               variant="contained"
-              onclick="Remember()"
               sx={{ mt: 3, mb: 2,backgroundColor: "#47bfaf",
               ':hover': {
                 bgcolor: '#031e45',
