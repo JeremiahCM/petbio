@@ -15,7 +15,7 @@ import Landing from "../landing/Landing";
 
 
 
-export default function NavDrawer() {
+export default function NavDrawer({toggleDrawer, state}){
   const tfStyle = {
     "& .MuiOutlinedInput-root": {
       color: "#47bfaf",
@@ -40,19 +40,6 @@ export default function NavDrawer() {
     }
   };
   const [dogNames, setDogNames] = useState(null);
-  const [state, setState] = React.useState({
-    right: false,
-  });
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-
-    setState({ ...state, [anchor]: open });
-  };
 
   useEffect(() => {
     const fetchDogIDs = async () => {

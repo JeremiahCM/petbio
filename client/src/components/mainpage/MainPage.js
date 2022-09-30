@@ -24,7 +24,7 @@ const tfStyle = {
   },
 };
 
-function MainPage({ children }) {
+function MainPage({ children,toggleDrawer,state}) {
   return (
     <Box className="App">
       <Helmet>
@@ -39,7 +39,7 @@ function MainPage({ children }) {
         alignItems="center"
         justifyContent="center"
       >
-        <NavBar className="Navbar" />
+        <NavBar toggleDrawer={toggleDrawer} state={state} className="Navbar" />
       </Grid>
       <Grid
         className="content"
