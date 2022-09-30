@@ -5,12 +5,7 @@ import { Grid} from "@mui/material";
 import NavBar from '../navbar/NavBar'
 import  './MainPage.css';
 import {Helmet} from 'react-helmet';
-
-import Box from "@mui/material/Box";
-import { Grid } from "@mui/material";
-import NavBar from "../navbar/NavBar";
 import Paper from "@mui/material/Paper";
-import "./MainPage.css";
 import TestChart from "../testchart/TestChart";
 
 const tfStyle = {
