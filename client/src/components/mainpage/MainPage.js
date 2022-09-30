@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import { Grid} from "@mui/material";
 import Navbar from '../navbar/Navbar'
 import  './MainPage.css';
-
+import TestChart from '../testchart/TestChart';
 const tfStyle = {
     "& .MuiOutlinedInput-root": {
         color: "#47bfaf",
