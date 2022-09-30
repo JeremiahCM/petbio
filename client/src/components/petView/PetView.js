@@ -22,26 +22,28 @@ const PetView = () => {
         species: "",
         breed: "",
         gender: "",
-        birthdate: dayjs(),
+        birthdate: "",
         age: 0,
         description: "",
     })
     const params = useParams();
     const navigate = useNavigate();
 
-    var drawerId;
+    let petDataKeyValues = Object.entries(petData).map(([key, value]) => ({key,value}));
 
-    const getDogName = (id) => {
-        drawerId = id;
+    const trimDate = (petDataKeyValues) => {
+        let dateOfBirth = petDataKeyValues.find(data => data.key === "birthdate").value;
+        let index = petDataKeyValues.findIndex(data => data.key === "birthdate");
+
+        dateOfBirth = dateOfBirth.slice(0, dateOfBirth.indexOf('T'));
+        petDataKeyValues[index].value = dateOfBirth;
     }
 
-    let petDataKeyValues = Object.entries(petData).map(([key, value]) => ({key,value}));
+    trimDate(petDataKeyValues);
 
     useEffect(() => {
         async function fetchData() {
             const id = params.id.toString();
-
-            console.log(params.id);
 
             const response = await fetch(`http://localhost:5000/pets/view/${params.id.toString()}`)
 
@@ -60,7 +62,6 @@ const PetView = () => {
                 return;
             }
 
-            console.log("here");
             console.log(pet);
         
             setPetData(pet);
@@ -82,13 +83,13 @@ const PetView = () => {
                     <Table sx={{ minWidth: 500 }} aria-label="simple-table">
                     <TableBody>
                         {petDataKeyValues.map((row) => {
-                            if (row.key !== "id" && row.key !== "birthdate") {
+                            if (row.key !== "_id" && row.key !== "id") {
                                 return (
                                     <TableRow
                                         key={row.key}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                     >
-                                        <TableCell>{row.key}</TableCell>
+                                        <TableCell>{row.key.charAt(0).toUpperCase() + row.key.slice(1)}</TableCell>
                                         <TableCell>{row.value}</TableCell>
                                     </TableRow>
                                 )

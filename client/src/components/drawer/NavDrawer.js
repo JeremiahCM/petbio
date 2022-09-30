@@ -29,7 +29,7 @@ export default function NavDrawer() {
   };
 
   useEffect(() => {
-    const fetchDogNames = async () => {
+    const fetchDogIDs = async () => {
       const response = await fetch("http://localhost:5000/pets/view-all");
       const json = await response.json();
 
@@ -38,10 +38,7 @@ export default function NavDrawer() {
       }
     };
 
-    fetchDogNames();
-
-    console.log("The dog names");
-    console.log(dogNames);
+    fetchDogIDs();
   }, []);
 
   const list = (anchor) => (
@@ -90,12 +87,17 @@ export default function NavDrawer() {
             disableTypography
             primary="Select Pet"
           >
+            <MenuItem key="add-new-pet">
+              <Link sx={{ fontSize: "1.5rem" }} to="/view-pet">
+                View Pet
+              </Link>
+            </MenuItem>
             {dogNames &&
               dogNames.map((dogName) => (
-                <MenuItem key={dogNames._id}>
+                <MenuItem key={dogNames.id}>
                   <Link
                     sx={{ fontSize: "1.5rem" }}
-                    to={`/view-pet/${dogName.name}`}
+                    to={`/view-pet/${dogName.id}`}
                   >
                     {dogName.name}
                   </Link>
