@@ -9,7 +9,7 @@ import "./NavDrawer.css";
 import { Link, BrowserRouter as Router } from "react-router-dom";
 import { Select, MenuItem, InputLabel } from "@mui/material";
 import { useEffect, useState } from "react";
-import PetView from "../petView/PetView";
+
 
 export default function NavDrawer() {
   const [dogNames, setDogNames] = useState(null);
@@ -93,7 +93,7 @@ export default function NavDrawer() {
                   <Link
                     sx={{ fontSize: "1.5rem" }}
                     to="/view-pet"
-                    onClick={getDogName(dogNames._id)}
+                    onClick={(dogNames._id)}
                   >
                     {dogName.name}
                   </Link>
