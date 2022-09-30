@@ -72,13 +72,7 @@ export default function NavDrawer() {
             Logout
           </Link>
         </ListItem>
-        <ListItem sx={{ fontSize: "1.5rem" }} button>
-          <ListItemText
-            sx={{ fontSize: "1.5rem", textDecoration: "none" }}
-            disableTypography
-            primary="Logout"
-          />
-        </ListItem>
+    
 
         <ListItem sx={{ fontSize: "1.5rem" }} button>
           <Link sx={{ fontSize: "1.5rem" }} to="/account">

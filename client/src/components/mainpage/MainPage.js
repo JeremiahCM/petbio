@@ -34,7 +34,7 @@ function MainPage({ children }) {
           direction="column"
           alignItems="center"
           justifyContent="center">
-          <Navbar className="Navbar"/>
+          <NavBar className="Navbar"/>
         </Grid>
         <Grid className="content"
           container
@@ -42,10 +42,10 @@ function MainPage({ children }) {
           direction="column"
           alignItems="center"
           justifyContent="center"
-          sx={{bgcolor: "white", height: "60vh",color: "black"}}>
-          <Box>
+          sx={{bgcolor: "white", height: "100vh",color: "black"}}>
+
             {children}
-          </Box>
+          
         </Grid>
     </Box>
   );
