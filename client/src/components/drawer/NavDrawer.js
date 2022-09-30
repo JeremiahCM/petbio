@@ -91,32 +91,29 @@ export default function NavDrawer() {
           textDecoration: "none",
         }}
       >
-        <ListItem key="logout" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
-          <Link sx={{ fontSize: "1.5rem" }} onClick={<Landing></Landing>}>
-            Logout
+        <ListItem key="account" sx={{ fontSize: "1.5rem" }} button>
+          <Link sx={{ fontSize: "1.5rem" }} to="/home">
+            Home
           </Link>
-        </ListItem>
-
-        <ListItem sx={{ fontSize: "1.5rem" }} button>
-          <ListItemText
-            sx={{ fontSize: "1.5rem", textDecoration: "none" }}
-            disableTypography
-            primary="Logout"
-          />
         </ListItem>
         <ListItem key="account" sx={{ fontSize: "1.5rem" }} button>
           <Link sx={{ fontSize: "1.5rem" }} to="/account">
             Account
           </Link>
         </ListItem>
+        <ListItem key="logout" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
+          <Link sx={{ fontSize: "1.5rem" }} onClick={<Landing></Landing>}>
+            Logout
+          </Link>
+        </ListItem>
       </List>
       <List>
-        <ListItem key="select-pet" sx={{ fontSize: "1.5rem" }} button>
-        <FormControl margin="normal">
-          <InputLabel id="select-pet" sx={{ fontSize: "1.5rem" }}>Select Pet</InputLabel>
+        <ListItem key="select-pet" sx={{ fontSize: "1.5rem",width: "100%" }} button>
+        <FormControl fullWidth>
+          <InputLabel id="select-pet" className="petSelect" sx={{ fontSize: "1.5rem"}}>Select Pet</InputLabel>
           <Select
             id="select-pet"
-            sx={{ fontSize: "1.5rem", textDecoration: "none" }}
+            sx={{ fontSize: "1.5rem", textDecoration: "none"}}
             disableTypography
             primary="Select Pet"
             className="petSelect"

@@ -3,13 +3,12 @@ import React from "react";
 import Box from '@mui/material/Box';
 import { Grid} from "@mui/material";
 import NavBar from '../navbar/NavBar'
-import  './MainPage.css';
 import {Helmet} from 'react-helmet';
 import Paper from "@mui/material/Paper";
-import TestChart from "../testchart/TestChart";
 
 
-function MainPage({ children }) {
+
+function Home() {
   return (
     <Box className="App">
       <Helmet>
@@ -21,7 +20,6 @@ function MainPage({ children }) {
           direction="column"
           alignItems="center"
           justifyContent="center">
-          <NavBar className="Navbar"/>
         </Grid>
         <Grid className="content"
           container
@@ -30,12 +28,9 @@ function MainPage({ children }) {
           alignItems="center"
           justifyContent="center"
           sx={{bgcolor: "white", height: "100vh",color: "black"}}>
-
-            {children}
-
         </Grid>
     </Box>
   );
 }
 
-export default MainPage;
+export default Home;
