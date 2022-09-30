@@ -1,12 +1,11 @@
 import React from "react";
 //import { Route, Routes } from "react-router-dom";
+import Box from '@mui/material/Box';
+import { Grid} from "@mui/material";
+import NavBar from '../navbar/NavBar'
+import  './MainPage.css';
 import {Helmet} from 'react-helmet';
-
-import Box from "@mui/material/Box";
-import { Grid } from "@mui/material";
-import NavBar from "../navbar/NavBar";
 import Paper from "@mui/material/Paper";
-import "./MainPage.css";
 import TestChart from "../testchart/TestChart";
 
 const tfStyle = {
@@ -42,10 +41,11 @@ function MainPage({ children }) {
           direction="column"
           alignItems="center"
           justifyContent="center"
-          sx={{bgcolor: "white", height: "100vh",color: "black"}}>
 
-            {children}
-          
+          sx={{bgcolor: "white", height: "100vh",color: "black"}}
+        >
+          {children}
+
         </Grid>
     </Box>
   );
