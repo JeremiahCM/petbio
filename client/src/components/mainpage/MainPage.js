@@ -1,7 +1,6 @@
 import React from "react";
 //import { Route, Routes } from "react-router-dom";
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import { Grid} from "@mui/material";
 import Navbar from '../navbar/Navbar'
 import  './MainPage.css';
@@ -36,8 +35,7 @@ function MainPage() {
           direction="column"
           alignItems="center"
           justifyContent="center"
-          sx={{bgcolor: "white", height: "100vh",color: "black"}}>
-
+          sx={{bgcolor: "white", height: "100vh"}}>
         </Grid>
     </Box>
   );
