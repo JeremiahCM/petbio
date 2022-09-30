@@ -9,7 +9,6 @@ import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
-import Helmet from 'react-helmet'
 
 const tfStyle = {
     "& .MuiOutlinedInput-root": {
@@ -27,9 +26,6 @@ const tfStyle = {
 function Landing({signedIn}) {
   return (
     <Box className="landing">
-      <Helmet>
-        <title>Login | PetBio</title>
-      </Helmet>
       <Typography variant="h1">
         <Grid
           container

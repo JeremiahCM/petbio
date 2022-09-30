@@ -7,14 +7,38 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./NavDrawer.css";
 import { Link, BrowserRouter as Router } from "react-router-dom";
+import { Select, MenuItem, InputLabel, FormControl } from "@mui/material";
 
-import { Select, MenuItem, InputLabel } from "@mui/material";
+
 import { useEffect, useState } from "react";
 import Landing from "../landing/Landing";
-import { Route, Routes } from "react-router-dom";
+
 
 
 export default function NavDrawer() {
+  const tfStyle = {
+    "& .MuiOutlinedInput-root": {
+      color: "#47bfaf",
+      fontFamily: "Montserrat",
+      "&.Mui-focused fieldset": {
+        borderColor: "#47bfaf",
+      },
+      "&:hover fieldset": {
+        borderColor: "#47bfaf",
+      },
+    },
+  };
+  const selStyle = {
+    "& $notchedOutline": {
+      borderColor: "#47bfaf"
+    },
+    "&:hover $notchedOutline": {
+      borderColor: "#47bfaf"
+    },
+    "&$focused $notchedOutline": {
+      borderColor: "#47bfaf"
+    }
+  };
   const [dogNames, setDogNames] = useState(null);
   const [state, setState] = React.useState({
     right: false,
@@ -31,7 +55,7 @@ export default function NavDrawer() {
   };
 
   useEffect(() => {
-    const fetchDogNames = async () => {
+    const fetchDogIDs = async () => {
       const response = await fetch("http://localhost:5000/pets/view-all");
       const json = await response.json();
 
@@ -40,7 +64,7 @@ export default function NavDrawer() {
       }
     };
 
-    fetchDogNames();
+    fetchDogIDs();
   }, []);
 
   const list = (anchor) => (
@@ -67,78 +91,74 @@ export default function NavDrawer() {
           textDecoration: "none",
         }}
       >
-        <ListItem sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
-          <Link sx={{ fontSize: "1.5rem" }} onClick={<Landing></Landing>}>
-            Logout
+        <ListItem key="account" sx={{ fontSize: "1.5rem" }} button>
+          <Link sx={{ fontSize: "1.5rem" }} to="/home">
+            Home
           </Link>
         </ListItem>
-        <ListItem sx={{ fontSize: "1.5rem" }} button>
-          <ListItemText
-            sx={{ fontSize: "1.5rem", textDecoration: "none" }}
-            disableTypography
-            primary="Logout"
-          />
-        </ListItem>
-
-        <ListItem sx={{ fontSize: "1.5rem" }} button>
+        <ListItem key="account" sx={{ fontSize: "1.5rem" }} button>
           <Link sx={{ fontSize: "1.5rem" }} to="/account">
             Account
           </Link>
         </ListItem>
-      </List>
-
-      <List>
-        <ListItem sx={{ fontSize: "1.5rem" }} button>
-          <InputLabel sx={{ fontSize: "1.5rem" }}>Select Pet</InputLabel>
-          <Select
-            sx={{ fontSize: "1.5rem", textDecoration: "none" }}
-            disableTypography
-            primary="Select Pet"
-          >
-            {dogNames &&
-              dogNames.map((dogName) => (
-                <MenuItem key={dogNames._id}>
-                  <Link
-                    sx={{ fontSize: "1.5rem" }}
-                    to="/view-pet"
-                    onClick={(dogNames._id)}
-                  >
-                    {dogName.name}
-                  </Link>
-                </MenuItem>
-              ))}
-          </Select>
-        </ListItem>
-        <ListItem sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
-          <Link sx={{ fontSize: "1.5rem" }} to="/view-pet">
-            View Pet
+        <ListItem key="logout" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
+          <Link sx={{ fontSize: "1.5rem" }} onClick={<Landing></Landing>}>
+            Logout
           </Link>
         </ListItem>
       </List>
-           <List>
-        <ListItem sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
+      <List>
+        <ListItem key="select-pet" sx={{ fontSize: "1.5rem",width: "100%" }} button>
+        <FormControl fullWidth>
+          <InputLabel id="select-pet" className="petSelect" sx={{ fontSize: "1.5rem"}}>Select Pet</InputLabel>
+          <Select
+            id="select-pet"
+            sx={{ fontSize: "1.5rem", textDecoration: "none"}}
+            disableTypography
+            primary="Select Pet"
+            className="petSelect"
+            label="Select Pet"
+            labelId="select-pet"
+          >
+            <MenuItem key="add-new-pet">
+              <Link sx={{ fontSize: "1.5rem" }} to="/add-a-pet">
+                Add a new Pet
+              </Link>
+            </MenuItem>
+            {dogNames &&
+              dogNames.map((dogName) => (
+                  <Link
+                    sx={{ fontSize: "1.5rem" }}
+                    to={`/view-pet/${dogName.id}`}
+                  >
+                    <MenuItem key={dogName.id}>
+                      {dogName.name}
+                    </MenuItem>
+                  </Link>
+              ))}
+          </Select>
+          </FormControl>
+        </ListItem>
+      </List>
+        <List>
+        <ListItem key="feeding-tracker" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
           <Link sx={{ fontSize: "1.5rem" }} to="/petfeeding">
             Feeding Tracker
           </Link>
      
         </ListItem>
-        <ListItem sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
+        <ListItem key="weight-tracker" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
          <Link sx={{ fontSize: "1.5rem" }} to="/weightform">
             Weight Tracker
-          </Link>
-          
+         </Link>
         </ListItem>
-        <ListItem sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
+        <ListItem key="add-a-tracker" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
           <ListItemText
-            sx={{ fontSize: "1.2rem" }}
+            sx={{ fontSize: "1.5rem" }}
             disableTypography
             primary="Add a Tracker"
           />
         </ListItem>
-        <ListItem
-          sx={{ fontSize: "1.5rem", textDecoration: "none" }}
-          button
-        ></ListItem>
       </List>
     </Box>
   );

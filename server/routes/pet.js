@@ -7,7 +7,7 @@ const { v4: uuidv4 } = require("uuid");
 
 const collectionName = "pets";
 
-//adding bio information for a new pet
+//Route to add bio information for a new pet
 router.post("/add", (req, res) => {
   let db_connect = dbo.getDatabase();
 
@@ -31,16 +31,18 @@ router.post("/add", (req, res) => {
     .catch((err) => res.status(404).json("Error" + err));
 });
 
-router.get("/view/:name", (req, res) => {
-  let db_connect = dbo.getDatabase();
+//Route to retrieve bio information for a specific pet by ID
+router.get("/view/:id", (req, res) => {
+    let db_connect = dbo.getDatabase();
 
-  db_connect
-    .collection(collectionName)
-    .findOne({ name: req.params.name })
-    .then((Bio) => res.json(Bio))
-    .catch((err) => res.status(404).json());
+    db_connect
+      .collection(collectionName)
+      .findOne({id: req.params.id})
+      .then((Bio) => res.json(Bio))
+      .catch((err) => res.status(404).json())
 });
 
+//Route to retrieve bio information for all the pets in the database
 router.get("/view-all", (req, res) => {
   let db_connect = dbo.getDatabase();
 
