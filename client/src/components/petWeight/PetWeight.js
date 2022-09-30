@@ -1,9 +1,9 @@
 import React from "react";
-import "./styles.css";
+import "./petWeight.css";
 
 import { Line } from "react-chartjs-2";
 
-export default function TestChart() {
+export default function PetWeight() {
   return (
     <div className="chart">
       <Line
