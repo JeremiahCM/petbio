@@ -22,7 +22,6 @@ const tfStyle = {
 function MainPage() {
   return (
     <Box className="App">
-      <Typography variant="h1">
         <Grid
           container
           spacing={0}
@@ -31,7 +30,15 @@ function MainPage() {
           justifyContent="center">
           <Navbar className="Navbar"/>
         </Grid>
-      </Typography>
+        <Grid className="content"
+          container
+          spacing={0}
+          direction="column"
+          alignItems="center"
+          justifyContent="center"
+          sx={{bgcolor: "white", height: "100vh",color: "black"}}>
+
+        </Grid>
     </Box>
   );
 }
