@@ -5,17 +5,18 @@ import { Box, Button, FormControl, Grid, InputLabel, MenuItem, Select, TextareaA
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import Paper from '@mui/material/Paper';
 
 const PetForm = () => {
     const tfStyle = {
         "& .MuiOutlinedInput-root": {
-            color: "#47bfaf",
+            color: "#031e45",
             fontFamily: 'Montserrat',
           "&.Mui-focused fieldset": {
-            borderColor: "#47bfaf"
+            borderColor: "#031e45"
           },
           '&:hover fieldset': {
-            borderColor: '#47bfaf',
+            borderColor: '#031e45',
           },
         },
         "minWidth": "320px"
@@ -77,7 +78,7 @@ const PetForm = () => {
     }
 
     return (
-        <Box className="bio-form" component="form" onSubmit={handleSubmit}>
+        <Paper className="bio-form" component="form" onSubmit={handleSubmit}>
             <Grid
                 container
                 spacing={0}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
@@ -85,7 +86,7 @@ const PetForm = () => {
                 alignItems="center"
                 justifyContent="center"
             >
-                <Typography>Pet Bio Form</Typography>
+                <Typography className='formHeader' sx={{ mt: 2, marginTop: "5%"}}>Pet Bio Form</Typography>
                 <TextField
                     sx={tfStyle}
                     margin="normal"
@@ -139,8 +140,9 @@ const PetForm = () => {
                         renderInput={(params) => <TextField sx={tfStyle} margin="normal" {...params} />}
                     />
                 </LocalizationProvider>
-                <Typography>Description</Typography>
+                <Typography className='formTypo'>Description</Typography>
                 <TextareaAutosize
+                    className='textArea'
                     margin="normal"
                     label="Description"
                     name="description"
@@ -150,13 +152,17 @@ const PetForm = () => {
                     maxRows={8}
                     style={{ width: 320 }}
                 />
-                <Button
-                    sx={{ mt: 2 }}
+                <Button className='formTypo btn'
+                    sx={{ mt: 2, marginBottom: "5%",backgroundColor: "#031e45",
+              ':hover': {
+                bgcolor: '#47bfaf',
+                color: 'white',
+              },}}
                     variant="contained"
                     type="submit"
                 >Add new Pet</Button>
             </Grid>
-        </Box>
+        </Paper>
     )
 }
 

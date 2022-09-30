@@ -2,7 +2,8 @@ import React from "react";
 //import { Route, Routes } from "react-router-dom";
 import Box from '@mui/material/Box';
 import { Grid} from "@mui/material";
-import Navbar from '../navbar/Navbar'
+import NavBar from '../navbar/NavBar'
+import Paper from '@mui/material/Paper';
 import  './MainPage.css';
 import TestChart from '../testchart/TestChart';
 const tfStyle = {
@@ -27,7 +28,7 @@ function MainPage({children}) {
           direction="column"
           alignItems="center"
           justifyContent="center">
-          <Navbar className="Navbar"/>
+          <NavBar className="NavBar"/>
         </Grid>
         <Grid className="content"
           container
@@ -36,9 +37,9 @@ function MainPage({children}) {
           alignItems="center"
           justifyContent="center"
           sx={{bgcolor: "white", height: "100vh",color: "black"}}>
-          <Box>
+          
             {children}
-          </Box>
+
         </Grid>
     </Box>
   );
