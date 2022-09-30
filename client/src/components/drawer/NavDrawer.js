@@ -11,6 +11,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import './NavDrawer.css'
+import { Link, BrowserRouter as Router } from 'react-router-dom';
 
 export default function NavDrawer() {
   const [state, setState] = React.useState({
@@ -52,19 +53,16 @@ export default function NavDrawer() {
         </List>
         <List>
         <ListItem sx={{fontSize: "1.2rem" }} button>
-          <ListItemText
+          <Link
             sx={{fontSize: "1.2rem" }}
-            disableTypography
-            primary="Switch Pet"
-          />
+            to="/petform"
+          >Switch Pet</Link>
         </ListItem>
         <ListItem sx={{fontSize: "1.2rem" }} button>
-          <ListItemText
+        <Link
             sx={{fontSize: "1.2rem" }}
-            disableTypography
-            primary="View Pet"
-          />
-
+            to="/petview"
+          >View Pet</Link>
         </ListItem>
         </List>
         <List>

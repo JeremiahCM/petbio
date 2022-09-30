@@ -19,10 +19,9 @@ const tfStyle = {
     }
   } 
 
-function MainPage() {
+function MainPage({children}) {
   return (
-    <Box className="App">
-      <Typography variant="h1">
+    <Box className="App">\
         <Grid
           container
           spacing={0}
@@ -31,7 +30,9 @@ function MainPage() {
           justifyContent="center">
           <Navbar className="Navbar"/>
         </Grid>
-      </Typography>
+        <Box>
+          {children}
+        </Box>
     </Box>
   );
 }

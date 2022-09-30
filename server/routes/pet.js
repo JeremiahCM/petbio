@@ -3,6 +3,7 @@ const { reset } = require("nodemon");
 const router = express.Router();
 const Bio = require("../models/Bio");
 const dbo = require("../db/conn");
+const { v4: uuidv4 } = require('uuid');
 
 const collectionName = "pets";
 
@@ -11,6 +12,7 @@ router.post("/add", (req, res) => {
     let db_connect = dbo.getDatabase();
 
     let pet = new Bio ({
+        id: uuidv4(),
         name: req.body.name,
         species: req.body.species,
         breed: req.body.breed,
@@ -22,15 +24,14 @@ router.post("/add", (req, res) => {
 
     console.log(db_connect);
 
-    db_connect.collection("pets").insertOne(pet).then(() => res.json("Pet added!"))
+    db_connect.collection(collectionName).insertOne(pet).then(() => res.json("Pet added!"))
     .catch((err) => res.status(404).json("Error" + err))
 });
 
 router.get("/view/:name", (req, res) => {
     let db_connect = dbo.getDatabase();
 
-    db_connect.collection("pets").findOne({name: req.params.name}).then((Bio) => res.json(Bio)).catch((err) => res.status(404).json())
-    
+    db_connect.collection(collectionName).findOne({name: req.params.name}).then((Bio) => res.json(Bio)).catch((err) => res.status(404).json())
 });
 
 
