@@ -1,21 +1,25 @@
 import './PetView.css';
-import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
-import { Box, Grid, TableContainer, Table, TableBody, TableRow, TableCell, Typography } from '@mui/material';
+import {
+    Box,
+    Grid,
+    TableContainer,
+    Table,
+    TableBody,
+    TableRow,
+    TableCell,
+    Typography
+} from '@mui/material';
 import { useParams, useNavigate } from "react-router"
 import React from 'react';
 import Helmet from 'react-helmet';
 
+/**
+ * This component is used for rendering the pet's details into a table for the user to view.
+ * Retrieves the data from our database based on the ID passed through the route links that loads this component.
+ * @returns Grid container with pet view header and content table.
+ */
 const PetView = () => {
-    /*const [petData, setPetData] = useState({
-        id: "45",
-        name: "Pluto",
-        species: "Dog",
-        gender: "Male",
-        birthdate: dayjs
-        age: 8
-    })*/
-
     const [petData, setPetData] = useState({
         id: "",
         name: "",
@@ -29,6 +33,9 @@ const PetView = () => {
     const params = useParams();
     const navigate = useNavigate();
 
+    /**
+     * Converting Pet Data to an array of Key and Value pairs usable for table mapping.
+     */
     let petDataKeyValues = Object.entries(petData).map(([key, value]) => ({key,value}));
 
     const trimDate = (petDataKeyValues) => {
@@ -41,6 +48,9 @@ const PetView = () => {
 
     trimDate(petDataKeyValues);
 
+    /**
+     * Retrieve data when user chooses or switches pet to view.
+     */
     useEffect(() => {
         async function fetchData() {
             const id = params.id.toString();
@@ -52,8 +62,6 @@ const PetView = () => {
                 window.alert(message);
                 return;
             }
-        
-            console.log(response);
 
             const pet = await response.json();
             if (!pet) {
@@ -61,8 +69,6 @@ const PetView = () => {
                 navigate("/");
                 return;
             }
-
-            console.log(pet);
         
             setPetData(pet);
         }

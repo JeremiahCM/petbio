@@ -5,9 +5,6 @@ import { Grid} from "@mui/material";
 import NavBar from '../navbar/NavBar'
 import  './MainPage.css';
 import {Helmet} from 'react-helmet';
-import Paper from "@mui/material/Paper";
-import TestChart from "../testchart/TestChart";
-
 
 function MainPage({ children }) {
   return (
@@ -29,16 +26,9 @@ function MainPage({ children }) {
           direction="column"
           alignItems="center"
           justifyContent="center"
-<<<<<<< HEAD
-          sx={{bgcolor: "white", height: "100vh",color: "black"}}>
-
-            {children}
-=======
-
           sx={{bgcolor: "white", height: "100vh",color: "black"}}
         >
           {children}
->>>>>>> 47d49439aaaceb77dd694d986fb969c0e34734c3
 
         </Grid>
     </Box>
