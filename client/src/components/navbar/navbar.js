@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import NavDrawer from '../drawer/NavDrawer'
 import MainLogo from '../logo/Logo'
 import './NavBar.css'
+import Home from '../home/Home';
 
 export default function Navbar({toggleDrawer,state}) {
   return (
