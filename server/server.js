@@ -20,4 +20,4 @@ app.listen(port, () => {
 });
 
 app.use("/pets", pets);
-app.use("/account", accounts);
+app.use("/accounts", accounts);

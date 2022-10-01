@@ -11,7 +11,7 @@ router.post("/add", (req, res) => {
 
   let account = new Account({
     email: req.body.email,
-    password: req.body.email,
+    password: req.body.password,
   });
 
   console.log(db_connect);
