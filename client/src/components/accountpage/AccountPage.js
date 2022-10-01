@@ -1,6 +1,7 @@
 import { Button, Grid, Typography, Paper, TextField } from "@mui/material";
 import "./accountpage.css";
 import { Helmet } from "react-helmet";
+import { useState } from 'react'
 import { Link } from "react";
 import MainPage from "../mainpage/MainPage";
 
@@ -20,8 +21,61 @@ const tfStyle = {
 };
 
 function AccountPage() {
+  const [accountData, setAccountData] = useState({
+    email: "",
+    password: "",
+  })
+
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const updateConfirmPassword = (e) => {
+    setConfirmPassword(e.target.value)
+  }
+
+  /**
+   * OnChange handler for form inputs.
+   * @param {*} e 
+   */
+  const updateAccountData = (e) => {
+    if (e.target.className === "password") {
+      // TODO: Password encryption
+
+      setAccountData({ ...accountData, [e.target.className]: e.target.value })
+    }
+
+    setAccountData({ ...accountData, [e.target.name]: e.target.value });
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    const newAccount = { ...accountData };
+
+    if (newAccount.password !== confirmPassword) {
+      window.alert("Passwords do not match. Please confirm your password.");
+      return;
+    }
+
+    await fetch("http://localhost:5000/accounts/add", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newAccount),
+    }).catch((error) => {
+      window.alert(error);
+      return;
+    });
+
+    setAccountData({
+      email: "",
+      password: "",
+    });
+    setConfirmPassword("");
+  }
+
   return (
-    <Paper variant="elevation" elevation={16} sx={{ p: 8 }}>
+    <Paper variant="elevation" elevation={16} component="form" onSubmit={handleSubmit} sx={{ p: 8 }}>
       <Helmet>
         <title>Account | PetBio</title>
       </Helmet>
@@ -48,6 +102,8 @@ function AccountPage() {
           id="email"
           label="Email Address"
           name="email"
+          value={accountData.email}
+          onChange={updateAccountData}
           autoComplete="email"
           autoFocus
         />
@@ -60,6 +116,9 @@ function AccountPage() {
           id="password"
           label="Password"
           name="password"
+          type="password"
+          value={accountData.password}
+          onChange={updateAccountData}
           autoComplete="password"
           autoFocus
         />
@@ -71,7 +130,10 @@ function AccountPage() {
           width="50%"
           id="password"
           label="Confirm Password"
-          name="password"
+          name="confirm-password"
+          type="password"
+          value={confirmPassword}
+          onChange={updateConfirmPassword}
           autoComplete="password"
           autoFocus
         />
@@ -92,10 +154,6 @@ function AccountPage() {
       >
         Save
       </Button>
-
-      
-
-   
     </Paper>
   );
 }

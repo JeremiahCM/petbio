@@ -108,11 +108,11 @@ export default function NavDrawer({toggleDrawer, state}){
             label="Select Pet"
             labelId="select-pet"
           >
-            <MenuItem key="add-new-pet">
               <Link sx={{ fontSize: "1.5rem" }} to="/add-a-pet">
-                Add a new Pet
+                <MenuItem key="add-new-pet">
+                  Add a new Pet
+                </MenuItem>
               </Link>
-            </MenuItem>
             {dogNames &&
               dogNames.map((dogName) => (
                   <Link
