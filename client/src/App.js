@@ -11,6 +11,8 @@ import WeightChart from "./components/petWeight/WeightChart";
 import WeightForm from "./components/petWeight/WeightForm";
 import Home from './components/home/Home'
 import { Navigate } from "react-router-dom";
+import AddTracker from "./components/addtracker/AddTracker";
+import TrackerChart from "./components/addtracker/TrackerChart";
 function App() {
   const [state, setState] = React.useState({
     right: false,
@@ -44,6 +46,8 @@ function App() {
         <Route exact path="/petfeeding" element={<PetFeeding />} />
         <Route exact path="/weightform" element={<WeightForm />} />
         <Route exact path="/weightchart" element={<WeightChart />} />
+        <Route exact path="/addtracker" element={<AddTracker />} />
+        <Route exact path="/trackerchart" element={<TrackerChart />} />
         <Route exact path="/home" element={<Home toggleDrawer={toggleDrawer}/>} />
       </Routes>
     </MainPage>

@@ -140,12 +140,10 @@ export default function NavDrawer({toggleDrawer, state}){
             Weight Tracker
          </Link>
         </ListItem>
-        <ListItem key="add-a-tracker" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
-          <ListItemText
-            sx={{ fontSize: "1.5rem" }}
-            disableTypography
-            primary="Add a Tracker"
-          />
+        <ListItem key="weight-tracker" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
+         <Link sx={{ fontSize: "1.5rem" }} to="/addtracker">
+            Add Tracker
+         </Link>
         </ListItem>
       </List>
     </Box>
