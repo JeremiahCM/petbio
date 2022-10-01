@@ -2,9 +2,19 @@
 
 This is the frontend of PetBio which contains the react app website
 
+## Installation / Setup Instructions
+
+1. In a terminal for the root repo directory, run 'cd client' to open this directory
+2. Run 'npm i --legacy-peer-deps' to install the dependencies
+3. Run 'npm start' to run the app
+4. Application should open up in your browser
+
 ## Dependencies installed:
-* react-router-dom
+* React Router Dom
+* React Helmet
+* React ChartJS V2
 * MaterialUI
+* DayJS
 
 # Getting Started with Create React App
 
