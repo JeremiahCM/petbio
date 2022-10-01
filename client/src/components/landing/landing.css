@@ -9,7 +9,7 @@ font-family: 'Baloo 2', cursive;
 font-family: 'Montserrat', sans-serif;
 */
 .landing {
-    background: linear-gradient(359deg, #47bfaf, #031e45);
+    background: linear-gradient(360deg, #47bfaf, #031e45);
     background-size: 400% 400%;
     background-repeat: no-repeat;
     animation: AnimationName 30s ease infinite;

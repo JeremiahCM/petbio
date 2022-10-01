@@ -1,10 +1,21 @@
+/* Hex Values:
+#ffffff white
+#47bfaf turquoise 
+#031e45 dark navy blue
+*/
+/*
+css rules:
+font-family: 'Baloo 2', cursive;
+font-family: 'Montserrat', sans-serif;
+*/
+
+
 .homeLogo{
     width: 40%;
     height: 25%;
-    margin-top: 5%;
 }
 .gradient {
-    background: linear-gradient(359deg, #47bfaf, #031e45);
+    background: linear-gradient(180deg, #47bfaf, #031e45);
     background-size: 400% 400%;
     background-repeat: no-repeat;
     animation: AnimationName 30s ease infinite;
@@ -12,4 +23,17 @@
     margin: 0;
     left: 0;
     font-family: 'Montserrat', sans-serif;
+}
+.typH{
+    font-family: 'Baloo 2', cursive!important;
+}
+.typB{
+    font-family: 'Montserrat', sans-serif!important;
+    width: 43vw;
+}
+.explore{
+ z-index: +1;
+ font-family: 'Baloo 2', cursive!important;
+ color: #47bfaf!important;
+ font-size: 48px!important;
 }

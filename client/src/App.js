@@ -12,13 +12,27 @@ import WeightForm from "./components/petWeight/WeightForm";
 import Home from './components/home/Home'
 import { Navigate } from "react-router-dom";
 function App() {
+  const [state, setState] = React.useState({
+    right: false,
+  });
+  const toggleDrawer = (anchor, open) => (event) => {
+    console.log(anchor)
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
   const [isSignedIn, setSignIn] = React.useState(false);
 
   if (isSignedIn === false) {
     return <Landing signedIn={setSignIn} />;
   }
   return (
-    <MainPage>
+    <MainPage toggleDrawer={toggleDrawer} state={state}>
       <Routes>
           <Route
               path="*"
@@ -30,7 +44,7 @@ function App() {
         <Route exact path="/petfeeding" element={<PetFeeding />} />
         <Route exact path="/weightform" element={<WeightForm />} />
         <Route exact path="/weightchart" element={<WeightChart />} />
-        <Route exact path="/home" element={<Home />} />
+        <Route exact path="/home" element={<Home toggleDrawer={toggleDrawer}/>} />
       </Routes>
     </MainPage>
 
