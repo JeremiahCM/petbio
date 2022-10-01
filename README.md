@@ -9,4 +9,3 @@ PetBio is a website which allows pet owners to create a 'Pet Resume' with import
     * React
     * NodeJS
 * MaterialUI
-* Nodemon
