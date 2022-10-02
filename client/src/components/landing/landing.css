@@ -9,52 +9,62 @@ font-family: 'Baloo 2', cursive;
 font-family: 'Montserrat', sans-serif;
 */
 .landing {
-    background: linear-gradient(360deg, #47bfaf, #031e45);
-    background-size: 400% 400%;
-    background-repeat: no-repeat;
-    animation: AnimationName 30s ease infinite;
-    height: 100vh;
-    margin: 0;
-    left: 0;
-    font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(360deg, #47bfaf, #031e45);
+  background-size: 400% 400%;
+  background-repeat: no-repeat;
+  animation: AnimationName 30s ease infinite;
+  height: 100vh;
+  margin: 0;
+  left: 0;
+  font-family: "Montserrat", sans-serif;
 }
 html {
-    box-sizing: border-box;
-  }
-  
-html, body, #root {
-padding: 0px !important;;
-margin: 0px !important;;
-height: 100vh;
-width: 100vw;
+  box-sizing: border-box;
 }
-*, *:before, *:after {
-box-sizing: inherit;
+
+html,
+body,
+#root {
+  padding: 0px !important;
+  margin: 0px !important;
+  height: 100vh;
+  width: 100vw;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 @keyframes AnimationName {
-    0%{background-position:50% 0%}
-    50%{background-position:51% 100%}
-    100%{background-position:50% 0%}
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 51% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
 }
-.heading{
-    font-family: 'Baloo 2', cursive!important;
+.heading {
+  font-family: "Baloo 2", cursive !important;
 }
-.logo{
-    width: 50%;
+.logo {
+  width: 50%;
 }
-.heading{
-    margin-top: 5%;
+.heading {
+  margin-top: 5%;
 }
-.css-1lxbxf0-MuiButtonBase-root-MuiButton-root:hover{
-    background-color: #031e45!important;
+.css-1lxbxf0-MuiButtonBase-root-MuiButton-root:hover {
+  background-color: #031e45 !important;
 }
-.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked{
-    color: #031e45!important;
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked {
+  color: #031e45 !important;
 }
 .css-1sumxir-MuiFormLabel-root-MuiInputLabel-root {
-     color: #47bfaf!important;
-     font-weight: 700!important;
+  color: #47bfaf !important;
+  font-weight: 700 !important;
 }
-.btn{
-    margin-bottom: 5%;
+.btn {
+  margin-bottom: 5%;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import "./AddTracker.css";
 
 import { Line } from "react-chartjs-2";
-import { Link, BrowserRouter as Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 export default function TrackerChart() {
   return (
     <div className="chart">

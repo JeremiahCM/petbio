@@ -1,7 +1,7 @@
 import React from "react";
 import "./AddTracker.css";
 import { Grid, TextField, Typography } from "@mui/material";
-import { Link, BrowserRouter as Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Paper from "@mui/material/Paper";
 export default function AddTracker() {
   const tfStyle = {
@@ -26,7 +26,10 @@ export default function AddTracker() {
         alignItems="center"
         justifyContent="center"
       >
-        <Typography className="formHeader" sx={{ mt: 2, marginTop: "5%", color: "#47bfaf" }}>
+        <Typography
+          className="formHeader"
+          sx={{ mt: 2, marginTop: "5%", color: "#47bfaf" }}
+        >
           Enter Tracker Name
         </Typography>
         <TextField

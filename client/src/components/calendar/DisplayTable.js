@@ -32,17 +32,44 @@ function createData(
 }
 
 export default function DisplayTable({ calendarEvents }) {
-  let rows = []
-  rows.push(createData("12AM", "---", "---", "---", "---", "---", "---", "---"));
+  let rows = [];
+  rows.push(
+    createData("12AM", "---", "---", "---", "---", "---", "---", "---")
+  );
   for (let i = 1; i < 12; i++) {
-    rows.push(createData(i.toString() + "AM", "---", "---", "---", "---", "---", "---", "---"));
+    rows.push(
+      createData(
+        i.toString() + "AM",
+        "---",
+        "---",
+        "---",
+        "---",
+        "---",
+        "---",
+        "---"
+      )
+    );
   }
-  rows.push(createData("12PM", "---", "---", "---", "---", "---", "---", "---"));
+  rows.push(
+    createData("12PM", "---", "---", "---", "---", "---", "---", "---")
+  );
   for (let i = 1; i < 12; i++) {
-    rows.push(createData(i.toString() + "PM", "---", "---", "---", "---", "---", "---", "---"));
+    rows.push(
+      createData(
+        i.toString() + "PM",
+        "---",
+        "---",
+        "---",
+        "---",
+        "---",
+        "---",
+        "---"
+      )
+    );
   }
   calendarEvents.forEach(function (item) {
     let dateArray = item[3].$d.toString().split(" ");
+    // eslint-disable-next-line array-callback-return
     rows.map(function (row) {
       if (dateArray[4].split(":")[0] > 12) {
         if (

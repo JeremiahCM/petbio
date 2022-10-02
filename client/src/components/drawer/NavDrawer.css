@@ -8,46 +8,48 @@ css rules:
 font-family: 'Baloo 2', cursive;
 font-family: 'Montserrat', sans-serif;
 */
-a, a:visited, a:hover, a:active {
+a,
+a:visited,
+a:hover,
+a:active {
   text-decoration: none;
   color: inherit;
 }
 .css-1160xiw-MuiPaper-root-MuiDrawer-paper {
-    background: 0 !important;
-    top: 4rem !important;
-    box-shadow: none !important;
-  }
-  .css-1vfk20j-MuiTypography-root {
-    margin: 0 !important;
-    font-family: Lato,Prata !important;
-    font-weight: 500 !important;
-    font-size: 1.2rem !important;
-    line-height: 1.5 !important;
-    display: block !important;
-  }
-  .css-185z3ai-MuiPaper-root {
-    margin-bottom: 0.75% !important;
-  }
-  .list{
-    font-family: 'Baloo 2', cursive!important;
-  }
-  .css-1enfqgf-MuiListItem-root {
-    font-family: 'Baloo 2', cursive!important;
-  }
-  .drawerBox{
-    font-family: 'Baloo 2', cursive!important;
-    font-weight: 700;
-  }
-  .petSelect{
-    font-family: 'Baloo 2', cursive!important;
-    font-weight: 700;
-    color: #47bfaf!important;
-  }
-  .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon{
-    color: #47bfaf!important;
-  }
-  .css-1d3z3hw-MuiOutlinedInput-notchedOutline{
-    color: #47bfaf!important;
-    border-color: #47bfaf!important;
-  }
-  
+  background: 0 !important;
+  top: 4rem !important;
+  box-shadow: none !important;
+}
+.css-1vfk20j-MuiTypography-root {
+  margin: 0 !important;
+  font-family: Lato, Prata !important;
+  font-weight: 500 !important;
+  font-size: 1.2rem !important;
+  line-height: 1.5 !important;
+  display: block !important;
+}
+.css-185z3ai-MuiPaper-root {
+  margin-bottom: 0.75% !important;
+}
+.list {
+  font-family: "Baloo 2", cursive !important;
+}
+.css-1enfqgf-MuiListItem-root {
+  font-family: "Baloo 2", cursive !important;
+}
+.drawerBox {
+  font-family: "Baloo 2", cursive !important;
+  font-weight: 700;
+}
+.petSelect {
+  font-family: "Baloo 2", cursive !important;
+  font-weight: 700;
+  color: #47bfaf !important;
+}
+.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon {
+  color: #47bfaf !important;
+}
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  color: #47bfaf !important;
+  border-color: #47bfaf !important;
+}

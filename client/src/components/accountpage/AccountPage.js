@@ -1,11 +1,7 @@
 import { Button, Grid, Typography, Paper, TextField } from "@mui/material";
 import "./accountpage.css";
 import { Helmet } from "react-helmet";
-import { useState } from 'react'
-import { Link } from "react";
-import MainPage from "../mainpage/MainPage";
-
-import Home from "../home/Home";
+import { useState } from "react";
 
 const tfStyle = {
   "& .MuiOutlinedInput-root": {
@@ -24,27 +20,27 @@ function AccountPage() {
   const [accountData, setAccountData] = useState({
     email: "",
     password: "",
-  })
+  });
 
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const updateConfirmPassword = (e) => {
-    setConfirmPassword(e.target.value)
-  }
+    setConfirmPassword(e.target.value);
+  };
 
   /**
    * OnChange handler for form inputs.
-   * @param {*} e 
+   * @param {*} e
    */
   const updateAccountData = (e) => {
     if (e.target.className === "password") {
       // TODO: Password encryption
 
-      setAccountData({ ...accountData, [e.target.className]: e.target.value })
+      setAccountData({ ...accountData, [e.target.className]: e.target.value });
     }
 
     setAccountData({ ...accountData, [e.target.name]: e.target.value });
-  }
+  };
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -75,7 +71,13 @@ function AccountPage() {
   }
 
   return (
-    <Paper variant="elevation" elevation={16} component="form" onSubmit={handleSubmit} sx={{ p: 8 }}>
+    <Paper
+      variant="elevation"
+      elevation={16}
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{ p: 8 }}
+    >
       <Helmet>
         <title>Account | PetBio</title>
       </Helmet>

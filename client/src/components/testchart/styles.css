@@ -1,9 +1,8 @@
 .App {
-    font-family: sans-serif;
-    text-align: center;
-  }
-.chart{
-    height: 100vh;
-    width: 70vw;
-    
-}  
+  font-family: sans-serif;
+  text-align: center;
+}
+.chart {
+  height: 100vh;
+  width: 70vw;
+}

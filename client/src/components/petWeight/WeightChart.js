@@ -1,10 +1,9 @@
 import React from "react";
 import "./petWeight.css";
-
 import { Line } from "react-chartjs-2";
-import { Link, BrowserRouter as Router } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 export default function WeightChart() {
-  var randomnumber = Math.floor(Math.random() * 20) + 9;
   return (
     <div className="chart">
       <Line

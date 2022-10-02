@@ -10,11 +10,12 @@ This is the frontend of PetBio which contains the react app website
 4. Application should open up in your browser
 
 ## Dependencies installed:
-* React Router Dom
-* React Helmet
-* React ChartJS V2
-* MaterialUI
-* DayJS
+
+- React Router Dom
+- React Helmet
+- React ChartJS V2
+- MaterialUI
+- DayJS
 
 # Getting Started with Create React App
 

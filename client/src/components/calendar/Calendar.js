@@ -21,7 +21,7 @@ function Calendar() {
     const index = calendarEvents.indexOf(props);
     if (index > -1) {
       setCalendarEvent((calendarEvents) =>
-        calendarEvents.filter((img, i) => i != index)
+        calendarEvents.filter((img, i) => i !== index)
       );
     }
   };

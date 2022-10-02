@@ -3,42 +3,15 @@ import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./NavDrawer.css";
-import { Link, BrowserRouter as Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Select, MenuItem, InputLabel, FormControl } from "@mui/material";
-
 
 import { useEffect, useState } from "react";
 import Landing from "../landing/Landing";
 
-
-
-export default function NavDrawer({toggleDrawer, state}){
-  const tfStyle = {
-    "& .MuiOutlinedInput-root": {
-      color: "#47bfaf",
-      fontFamily: "Montserrat",
-      "&.Mui-focused fieldset": {
-        borderColor: "#47bfaf",
-      },
-      "&:hover fieldset": {
-        borderColor: "#47bfaf",
-      },
-    },
-  };
-  const selStyle = {
-    "& $notchedOutline": {
-      borderColor: "#47bfaf"
-    },
-    "&:hover $notchedOutline": {
-      borderColor: "#47bfaf"
-    },
-    "&$focused $notchedOutline": {
-      borderColor: "#47bfaf"
-    }
-  };
+export default function NavDrawer({ toggleDrawer, state }) {
   const [dogNames, setDogNames] = useState(null);
 
   useEffect(() => {
@@ -79,70 +52,84 @@ export default function NavDrawer({toggleDrawer, state}){
         }}
       >
         <Link sx={{ fontSize: "1.5rem" }} to="/home">
-          <ListItem key="account" sx={{ fontSize: "1.5rem" }} button>
+          <ListItem key="account" sx={{ fontSize: "1.5rem" }}>
             Home
           </ListItem>
         </Link>
 
         <Link sx={{ fontSize: "1.5rem" }} to="/account">
-          <ListItem key="account" sx={{ fontSize: "1.5rem" }} button>
+          <ListItem key="account" sx={{ fontSize: "1.5rem" }}>
             Account
           </ListItem>
         </Link>
         <Link sx={{ fontSize: "1.5rem" }} onClick={<Landing></Landing>}>
-          <ListItem key="logout" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
+          <ListItem
+            key="logout"
+            sx={{ fontSize: "1.5rem", textDecoration: "none" }}
+          >
             Logout
           </ListItem>
         </Link>
       </List>
       <List>
-        <ListItem key="select-pet" sx={{ fontSize: "1.5rem",width: "100%" }} button>
-        <FormControl fullWidth>
-          <InputLabel id="select-pet" className="petSelect" sx={{ fontSize: "1.5rem"}}>Select Pet</InputLabel>
-          <Select
-            id="select-pet"
-            sx={{ fontSize: "1.5rem", textDecoration: "none"}}
-            disableTypography
-            primary="Select Pet"
-            className="petSelect"
-            label="Select Pet"
-            labelId="select-pet"
-          >
+        <ListItem key="select-pet" sx={{ fontSize: "1.5rem", width: "100%" }}>
+          <FormControl fullWidth>
+            <InputLabel
+              id="select-pet"
+              className="petSelect"
+              sx={{ fontSize: "1.5rem" }}
+            >
+              Select Pet
+            </InputLabel>
+            <Select
+              id="select-pet"
+              sx={{ fontSize: "1.5rem", textDecoration: "none" }}
+              disableTypography
+              primary="Select Pet"
+              className="petSelect"
+              label="Select Pet"
+              labelId="select-pet"
+            >
               <Link sx={{ fontSize: "1.5rem" }} to="/add-a-pet">
-                <MenuItem key="add-new-pet">
-                  Add a new Pet
-                </MenuItem>
+                <MenuItem key="add-new-pet">Add a new Pet</MenuItem>
               </Link>
-            {dogNames &&
-              dogNames.map((dogName) => (
+              {dogNames &&
+                dogNames.map((dogName) => (
                   <Link
                     sx={{ fontSize: "1.5rem" }}
                     to={`/view-pet/${dogName.id}`}
                   >
-                    <MenuItem key={dogName.id}>
-                      {dogName.name}
-                    </MenuItem>
+                    <MenuItem key={dogName.id}>{dogName.name}</MenuItem>
                   </Link>
-              ))}
-          </Select>
+                ))}
+            </Select>
           </FormControl>
         </ListItem>
       </List>
       <List>
         <Link sx={{ fontSize: "1.5rem" }} to="/petfeeding">
-          <ListItem key="feeding-tracker" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
+          <ListItem
+            key="feeding-tracker"
+            sx={{ fontSize: "1.5rem", textDecoration: "none" }}
+          >
             Feeding Tracker
           </ListItem>
         </Link>
         <Link sx={{ fontSize: "1.5rem" }} to="/weightform">
-          <ListItem key="weight-tracker" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
+          <ListItem
+            key="weight-tracker"
+            sx={{ fontSize: "1.5rem", textDecoration: "none" }}
+          >
             Weight Tracker
-        </ListItem>
+          </ListItem>
         </Link>
-        <ListItem key="weight-tracker" sx={{ fontSize: "1.5rem", textDecoration: "none" }} button>
-         <Link sx={{ fontSize: "1.5rem" }} to="/addtracker">
+        <ListItem
+          key="weight-tracker"
+          sx={{ fontSize: "1.5rem", textDecoration: "none" }}
+        >
+          <Link sx={{ fontSize: "1.5rem" }} to="/addtracker">
             Add Tracker
-         </Link>
+          </Link>
         </ListItem>
       </List>
     </Box>
@@ -154,7 +141,6 @@ export default function NavDrawer({toggleDrawer, state}){
         <React.Fragment key={anchor}>
           <MenuIcon
             sx={{ color: "#47bfaf", height: "10vh", width: "10vh" }}
-
             onClick={toggleDrawer(anchor, true)}
             fontSize="large"
           >

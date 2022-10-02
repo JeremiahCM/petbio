@@ -1,4 +1,3 @@
-
 import "./PetForm.css";
 import dayjs from "dayjs";
 import { useState } from "react";
@@ -22,7 +21,7 @@ import { Helmet } from "react-helmet";
 /**
  * This component gives the user a form they can fill out to add their information for a new pet to the database.
  * When the user submits the form, the information gets sent to the database and saved.
- * @returns 
+ * @returns
  */
 const PetForm = () => {
   const tfStyle = {
@@ -52,7 +51,7 @@ const PetForm = () => {
   /**
    * OnChange handler for form inputs.
    * Calculates age when a new birthdate is selected
-   * @param {*} e 
+   * @param {*} e
    */
   const updatePetData = (e) => {
     if (e.target.className === "birthdate") {
@@ -72,7 +71,7 @@ const PetForm = () => {
 
   /**
    * Send data to database to save when user clicks the submit button on form
-   * @param {*} e 
+   * @param {*} e
    */
   async function handleSubmit(e) {
     e.preventDefault();
@@ -102,10 +101,17 @@ const PetForm = () => {
   }
 
   return (
-    <Paper className="bio-form" variant="elevation" elevation={8} component="form" onSubmit={handleSubmit} sx={{p: 2, mt: 22, pl: 10, pr: 10}}>
-    <Helmet>
+    <Paper
+      className="bio-form"
+      variant="elevation"
+      elevation={8}
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{ p: 2, mt: 22, pl: 10, pr: 10 }}
+    >
+      <Helmet>
         <title>Add a Pet | PetBio</title>
-    </Helmet>
+      </Helmet>
       <Grid
         container
         spacing={0}
@@ -113,7 +119,12 @@ const PetForm = () => {
         alignItems="center"
         justifyContent="center"
       >
-        <Typography component="h1" variant="h5" className="heading" sx= {{color: "#47bfaf", fontSize: "42px", marginTop: "5%"}}>
+        <Typography
+          component="h1"
+          variant="h5"
+          className="heading"
+          sx={{ color: "#47bfaf", fontSize: "42px", marginTop: "5%" }}
+        >
           Add a pet
         </Typography>
         <TextField
@@ -196,6 +207,5 @@ const PetForm = () => {
     </Paper>
   );
 };
-
 
 export default PetForm;

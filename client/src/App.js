@@ -9,7 +9,7 @@ import PetView from "./components/petView/PetView";
 import PetFeeding from "./components/petFeeding/PetFeeding";
 import WeightChart from "./components/petWeight/WeightChart";
 import WeightForm from "./components/petWeight/WeightForm";
-import Home from './components/home/Home'
+import Home from "./components/home/Home";
 import { Navigate } from "react-router-dom";
 import AddTracker from "./components/addtracker/AddTracker";
 import TrackerChart from "./components/addtracker/TrackerChart";
@@ -18,7 +18,7 @@ function App() {
     right: false,
   });
   const toggleDrawer = (anchor, open) => (event) => {
-    console.log(anchor)
+    console.log(anchor);
     if (
       event.type === "keydown" &&
       (event.key === "Tab" || event.key === "Shift")
@@ -36,10 +36,7 @@ function App() {
   return (
     <MainPage toggleDrawer={toggleDrawer} state={state}>
       <Routes>
-          <Route
-              path="*"
-              element={<Navigate to="/home" replace />}
-          />
+        <Route path="*" element={<Navigate to="/home" replace />} />
         <Route exact path="/account" element={<AccountPage />} />
         <Route exact path="/add-a-pet" element={<PetForm />} />
         <Route path="/view-pet/:id" element={<PetView />} />
@@ -48,10 +45,13 @@ function App() {
         <Route exact path="/weightchart" element={<WeightChart />} />
         <Route exact path="/addtracker" element={<AddTracker />} />
         <Route exact path="/trackerchart" element={<TrackerChart />} />
-        <Route exact path="/home" element={<Home toggleDrawer={toggleDrawer}/>} />
+        <Route
+          exact
+          path="/home"
+          element={<Home toggleDrawer={toggleDrawer} />}
+        />
       </Routes>
     </MainPage>
-
   );
 }
 

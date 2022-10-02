@@ -83,7 +83,7 @@ const PetView = () => {
     fetchData();
 
     return;
-  }, [params.name, navigate]);
+  }, [params.name, navigate, params.id]); // ESLint said to add params.id, if code is broken is because this was added
 
   return (
     <Grid
