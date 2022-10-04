@@ -9,8 +9,72 @@ import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Button from "@mui/material/Button";
 import Checkbox from "@mui/material/Checkbox";
+import { styled } from "@mui/material";
 
+const LandingPaper = styled(Paper)(({ theme }) => ({
+  [theme.breakpoints.down("lg")]: {
+    width: "75vw",
+    height: "60vh",
+  },
+  [theme.breakpoints.down("md")]: {
+    width: "85vw",
+    height: "70vh",
+  },
+  [theme.breakpoints.down("sm")]: {
+    width: "95vw",
+    height: "80vh",
+  },
+}));
+const PaperGrid = styled(Grid)(({ theme }) => ({
+  [theme.breakpoints.down("lg")]: {
+    width: "75vw",
+    height: "60vh",
+  },
+  [theme.breakpoints.down("md")]: {
+    width: "85vw",
+    height: "70vh",
+  },
+  [theme.breakpoints.down("sm")]: {
+    width: "95vw",
+    height: "80vh",
+  },
+}));
+const PaperHeading = styled(Typography)(({ theme }) => ({
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "54px",
+  },
+  [theme.breakpoints.down("md")]: {
+    fontSize: "64px",
+  },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "74px",
+  },
+}));
+const PaperInput = styled(TextField)(({ theme }) => ({
+  [theme.breakpoints.down("lg")]: {
+    width: "60%",
+  },
+  [theme.breakpoints.down("md")]: {
+    width: "70%",
+  },
+  [theme.breakpoints.down("sm")]: {
+    width: "80%",
+  },
+}));
+const LogoGrid = styled(Grid)(({ theme }) => ({
+  [theme.breakpoints.down("md")]: {
+    logo: {
+      width: "100%",
+    },
+  },
+  [theme.breakpoints.down("sm")]: {
+    logo: {
+      width: "100%",
+    },
+  },
+}));
 const tfStyle = {
+  width: "50%",
   "& .MuiOutlinedInput-root": {
     color: "#47bfaf",
     fontFamily: "Montserrat",
@@ -22,7 +86,6 @@ const tfStyle = {
     },
   },
 };
-
 function Landing({ signedIn }) {
   return (
     <Box className="landing">
@@ -34,40 +97,51 @@ function Landing({ signedIn }) {
           alignItems="center"
           justifyContent="center"
         >
-          <img
-            className="logo"
-            src={logo}
-            alt={"PetBio"}
-            sx={{
-              width: "50%",
-            }}
-          ></img>
-          <Paper
+          <LogoGrid
+            container
+            spacing={0}
+            direction="column"
+            alignItems="center"
+            justifyContent="center"
+            sx={{ background: "none", boxShadow: "none" }}
+          >
+            <img className="logo" src={logo} alt={"PetBio"}></img>
+          </LogoGrid>
+          <LandingPaper
+            container
+            spacing={0}
+            direction="column"
+            alignItems="center"
+            justifyContent="center"
             sx={{
               backgroundColor: "white",
-              width: "25%",
-              height: "25%",
+              width: "45vw",
+              height: "50vh",
               alignItems: "center",
               justifyContent: "center",
               textAlign: "center",
             }}
           >
-            <Typography
-              component="h1"
-              variant="h5"
-              className="heading"
-              sx={{ color: "#47bfaf", fontSize: "42px", marginTop: "5%" }}
-            >
-              Sign in
-            </Typography>
-            <Grid
+            <PaperGrid
               container
               spacing={0}
               direction="column"
               alignItems="center"
               justifyContent="center"
             >
-              <TextField
+              <PaperHeading
+                component="h1"
+                variant="h5"
+                className="heading"
+                sx={{
+                  color: "#47bfaf",
+                  fontSize: "42px",
+                  marginTop: "7%",
+                }}
+              >
+                Sign in
+              </PaperHeading>
+              <PaperInput
                 sx={tfStyle}
                 margin="normal"
                 required
@@ -78,7 +152,7 @@ function Landing({ signedIn }) {
                 autoComplete="email"
                 autoFocus
               />
-              <TextField
+              <PaperInput
                 sx={tfStyle}
                 margin="normal"
                 required
@@ -111,8 +185,8 @@ function Landing({ signedIn }) {
               >
                 Sign In
               </Button>
-            </Grid>
-          </Paper>
+            </PaperGrid>
+          </LandingPaper>
         </Grid>
       </Typography>
     </Box>

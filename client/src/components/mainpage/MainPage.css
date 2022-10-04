@@ -15,9 +15,6 @@ font-family: 'Montserrat', sans-serif;
 .logo {
   width: 50%;
 }
-.heading {
-  margin-top: 5%;
-}
 .css-1lxbxf0-MuiButtonBase-root-MuiButton-root:hover {
   background-color: #031e45 !important;
 }
@@ -33,6 +30,4 @@ font-family: 'Montserrat', sans-serif;
 }
 .contentPaper {
   background-color: #47bfaf !important;
-}
-.content {
 }
