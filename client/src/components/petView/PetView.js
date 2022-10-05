@@ -1,6 +1,7 @@
 import "./PetView.css";
 import { useEffect, useState } from "react";
 import {
+  Button,
   Paper,
   Grid,
   TableContainer,
@@ -11,6 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useParams, useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 import React from "react";
 import Helmet from "react-helmet";
 
@@ -135,6 +137,24 @@ const PetView = () => {
             </TableBody>
           </Table>
         </TableContainer>
+        <Link to={`/edit-pet/${petData.id}`}>
+            <Button
+                type="button"
+                width="50%"
+                variant="contained"
+                sx={{
+                mt: 3,
+                mb: 2,
+                backgroundColor: "#47bfaf",
+                ":hover": {
+                    bgcolor: "#031e45",
+                    color: "white",
+                },
+                }}
+            >
+                Edit Pet Details
+            </Button>
+        </Link>
       </Paper>
     </Grid>
   );

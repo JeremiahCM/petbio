@@ -40,6 +40,7 @@ function App() {
         <Route exact path="/account" element={<AccountPage />} />
         <Route exact path="/add-a-pet" element={<PetForm />} />
         <Route path="/view-pet/:id" element={<PetView />} />
+        <Route path="/edit-pet/:id" element={<PetForm />} />
         <Route exact path="/petfeeding" element={<PetFeeding />} />
         <Route exact path="/weightform" element={<WeightForm />} />
         <Route exact path="/weightchart" element={<WeightChart />} />

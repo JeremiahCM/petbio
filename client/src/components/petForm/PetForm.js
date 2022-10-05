@@ -200,7 +200,20 @@ const PetForm = () => {
           maxRows={8}
           style={{ width: 320 }}
         />
-        <Button sx={{ mt: 2 }} variant="contained" type="submit">
+        <Button
+          type="submit"
+          width="50%"
+          variant="contained"
+          sx={{
+            mt: 3,
+            mb: 2,
+            backgroundColor: "#47bfaf",
+            ":hover": {
+              bgcolor: "#031e45",
+              color: "white",
+            },
+          }}
+        >
           Add new Pet
         </Button>
       </Grid>
