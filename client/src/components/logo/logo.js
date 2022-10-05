@@ -1,6 +1,6 @@
 /* eslint-disable arrow-body-style */
 import mainImage from "../../images/PetBioNav.png";
-import "./logo.css";
+import "./Logo.css";
 import { Link } from "react-router-dom";
 /**
  * Shows the logo for the application.

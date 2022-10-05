@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import NavDrawer from "../drawer/NavDrawer";
 import MainLogo from "../logo/logo";
-import "./NavBar.css";
+import "./navbar.css";
 
 export default function Navbar({ toggleDrawer, state }) {
   return (
