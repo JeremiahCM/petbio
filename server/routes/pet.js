@@ -33,13 +33,13 @@ router.post("/add", (req, res) => {
 
 //Route to retrieve bio information for a specific pet by ID
 router.get("/view/:id", (req, res) => {
-    let db_connect = dbo.getDatabase();
+  let db_connect = dbo.getDatabase();
 
-    db_connect
-      .collection(collectionName)
-      .findOne({id: req.params.id})
-      .then((Bio) => res.json(Bio))
-      .catch((err) => res.status(404).json())
+  db_connect
+    .collection(collectionName)
+    .findOne({ id: req.params.id })
+    .then((Bio) => res.json(Bio))
+    .catch((err) => res.status(404).json());
 });
 
 //Route to retrieve bio information for all the pets in the database
@@ -50,6 +50,40 @@ router.get("/view-all", (req, res) => {
     .collection(collectionName)
     .find()
     .toArray()
+    .then((Bio) => res.json(Bio))
+    .catch((err) => res.status(404).json());
+});
+
+router.delete("/delete/:id", (req, res) => {
+  let db_connect = dbo.getDatabase();
+
+  db_connect
+    .collection(collectionName)
+    .remove({ id: req.params.id })
+    .then((Bio) => res.json(Bio))
+    .catch((err) => res.status(404).json());
+});
+
+router.put("/update/:id", (req, res) => {
+  let db_connect = dbo.getDatabase();
+
+  db_connect
+    .collection(collectionName)
+    .updateOne(
+      { id: req.params.id },
+      {
+        $set: {
+          name: req.body.name,
+          species: req.body.species,
+          breed: req.body.breed,
+          gender: req.body.gender,
+          birthdate: req.body.birthdate,
+          age: req.body.age,
+          description: req.body.description,
+        },
+      }
+    )
+
     .then((Bio) => res.json(Bio))
     .catch((err) => res.status(404).json());
 });
