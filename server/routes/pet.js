@@ -54,6 +54,7 @@ router.get("/view-all", (req, res) => {
     .catch((err) => res.status(404).json());
 });
 
+//Route to delete bio information for an existing pet
 router.delete("/delete/:id", (req, res) => {
   let db_connect = dbo.getDatabase();
 
@@ -64,6 +65,7 @@ router.delete("/delete/:id", (req, res) => {
     .catch((err) => res.status(404).json());
 });
 
+//Route to update bio information for an existing pet
 router.put("/update/:id", (req, res) => {
   let db_connect = dbo.getDatabase();
 

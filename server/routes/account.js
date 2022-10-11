@@ -5,7 +5,7 @@ const dbo = require("../db/conn");
 
 const collectionName = "accounts";
 
-//adding bio information for a new pet
+//Route to add an account for a new user
 router.post("/add", (req, res) => {
   let db_connect = dbo.getDatabase();
 
@@ -23,6 +23,7 @@ router.post("/add", (req, res) => {
     .catch((err) => res.status(404).json("Error" + err));
 });
 
+//Route to retrieve the details of a specific account for validation purposes
 router.get("/validate", (req, res) => {
     let db_connect = dbo.getDatabase();
 
