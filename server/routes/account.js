@@ -29,4 +29,5 @@ router.get("/validate", (req, res) => {
     db_connect.collection("accounts").findOne({name: req.params.name}).then((Bio) => res.json(Bio)).catch((err) => res.status(404).json())
 })
 
+
 module.exports = router;
