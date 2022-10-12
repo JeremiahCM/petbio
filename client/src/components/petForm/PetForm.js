@@ -160,7 +160,7 @@ const PetForm = () => {
           className="heading"
           sx={{ color: "#47bfaf", fontSize: "42px", marginTop: "5%" }}
         >
-          Add a pet
+          {(petData.id) ? "Edit Pet" : "Add a Pet"}
         </Typography>
         <TextField
           sx={tfStyle}
