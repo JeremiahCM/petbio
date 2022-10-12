@@ -1,6 +1,6 @@
 import "./PetForm.css";
 import dayjs from "dayjs";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Button,
   FormControl,
@@ -13,6 +13,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import { useParams, useNavigate } from "react-router";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
@@ -48,6 +49,9 @@ const PetForm = () => {
     description: "",
   });
 
+  const params = useParams();
+  const navigate = useNavigate();
+
   /**
    * OnChange handler for form inputs.
    * Calculates age when a new birthdate is selected
@@ -69,6 +73,37 @@ const PetForm = () => {
     return ageHumanYears;
   };
 
+  useEffect(() => {
+    async function fetchData() {
+      if (params.id != null) {
+        const id = params.id.toString();
+
+        const response = await fetch(
+          `http://localhost:5000/pets/view/${params.id.toString()}`
+        );
+  
+        if (!response.ok) {
+          const message = `An error has occurred: ${response.statusText}`;
+          window.alert(message);
+          return;
+        }
+  
+        const pet = await response.json();
+        if (!pet) {
+          window.alert(`Pet with name ${id} not found`);
+          navigate("/");
+          return;
+        }
+  
+        setPetData(pet);
+      }
+    }
+
+    fetchData();
+
+    return;
+  }, [params.id, navigate])
+
   /**
    * Send data to database to save when user clicks the submit button on form
    * @param {*} e
@@ -76,14 +111,14 @@ const PetForm = () => {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const newPet = { ...petData };
+    const newPetData = { ...petData };
 
     await fetch("http://localhost:5000/pets/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newPet),
+      body: JSON.stringify(newPetData),
     }).catch((error) => {
       window.alert(error);
       return;
