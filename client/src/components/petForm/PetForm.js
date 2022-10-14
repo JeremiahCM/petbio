@@ -24,7 +24,7 @@ import { Helmet } from "react-helmet";
  * When the user submits the form, the information gets sent to the database and saved.
  * @returns
  */
-const PetForm = () => {
+const PetForm = (props) => {
   const tfStyle = {
     "& .MuiOutlinedInput-root": {
       color: "#47bfaf",
@@ -75,34 +75,49 @@ const PetForm = () => {
 
   useEffect(() => {
     async function fetchData() {
-      if (params.id != null) {
-        const id = params.id.toString();
 
-        const response = await fetch(
-          `http://localhost:5000/pets/view/${params.id.toString()}`
-        );
-  
-        if (!response.ok) {
-          const message = `An error has occurred: ${response.statusText}`;
-          window.alert(message);
-          return;
-        }
-  
-        const pet = await response.json();
-        if (!pet) {
-          window.alert(`Pet with name ${id} not found`);
-          navigate("/");
-          return;
-        }
-  
-        setPetData(pet);
+      const id = params.id.toString();
+
+      const response = await fetch(
+        `http://localhost:5000/pets/view/${params.id.toString()}`
+      );
+
+      if (!response.ok) {
+        const message = `An error has occurred: ${response.statusText}`;
+        window.alert(message);
+        return;
       }
+
+      const pet = await response.json();
+      if (!pet) {
+        window.alert(`Pet with name ${id} not found`);
+        navigate("/");
+        return;
+      }
+
+      setPetData(pet);
     }
 
-    fetchData();
+    const formAction = props.action;
+
+    if (formAction === "edit") {
+      fetchData();
+    }
+    
+    if (formAction === "add") {
+      setPetData({
+        name: "",
+        species: "",
+        breed: "",
+        gender: "",
+        birthdate: dayjs(),
+        age: 0,
+        description: "",
+      });
+    }
 
     return;
-  }, [params.id, navigate])
+  }, [props.action, params.id, navigate])
 
   /**
    * Send data to database to save when user clicks the submit button on form
@@ -249,7 +264,7 @@ const PetForm = () => {
             },
           }}
         >
-          Add new Pet
+          {(petData.id) ? "Edit details of Pet" : "Add new Pet"}
         </Button>
       </Grid>
     </Paper>
