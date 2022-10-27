@@ -2,6 +2,7 @@ import "./PetForm.css";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import {
+  Box,
   Button,
   FormControl,
   Grid,
@@ -48,6 +49,7 @@ const PetForm = (props) => {
     age: 0,
     description: "",
   });
+  const [submitMessage, setSubmitMessage] = useState('');
 
   const params = useParams();
   const navigate = useNavigate();
@@ -140,6 +142,8 @@ const PetForm = (props) => {
         return;
       });
 
+      setSubmitMessage(`Successfully added your pet '${newPetData.name}'.`);
+
       setPetData({
         name: "",
         species: "",
@@ -162,6 +166,8 @@ const PetForm = (props) => {
         window.alert(error);
         return;
       });
+
+      setSubmitMessage(`Successfully updated details for '${newPetData.name}'.`);
     }
   }
 
@@ -281,6 +287,11 @@ const PetForm = (props) => {
         >
           {(petData.id) ? "Edit details of Pet" : "Add new Pet"}
         </Button>
+        {submitMessage &&
+          <Box>
+            <Typography>{submitMessage}</Typography>
+          </Box>
+        }
       </Grid>
     </Paper>
   );
