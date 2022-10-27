@@ -178,7 +178,7 @@ const PetForm = (props) => {
       elevation={8}
       component="form"
       onSubmit={handleSubmit}
-      sx={{ p: 2, mt: 22, pl: 10, pr: 10 }}
+      sx={{ p: 2, mt: 22, mb: 12}}
     >
       <Helmet>
         <title>Add a Pet | PetBio</title>
@@ -269,7 +269,10 @@ const PetForm = (props) => {
           onChange={updatePetData}
           minRows={8}
           maxRows={8}
-          style={{ width: 320 }}
+          style={{
+            maxWidth: 320,
+            minWidth: 320,
+          }}
         />
         <Button
           type="submit"
