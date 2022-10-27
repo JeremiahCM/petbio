@@ -52,6 +52,8 @@ const PetForm = (props) => {
   const params = useParams();
   const navigate = useNavigate();
 
+  const formAction = props.action;
+
   /**
    * OnChange handler for form inputs.
    * Calculates age when a new birthdate is selected
@@ -98,8 +100,6 @@ const PetForm = (props) => {
       setPetData(pet);
     }
 
-    const formAction = props.action;
-
     if (formAction === "edit") {
       fetchData();
     }
@@ -128,26 +128,41 @@ const PetForm = (props) => {
 
     const newPetData = { ...petData };
 
-    await fetch("http://localhost:5000/pets/add", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newPetData),
-    }).catch((error) => {
-      window.alert(error);
-      return;
-    });
+    if (formAction === "add") {
+      await fetch("http://localhost:5000/pets/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newPetData),
+      }).catch((error) => {
+        window.alert(error);
+        return;
+      });
 
-    setPetData({
-      name: "",
-      species: "",
-      breed: "",
-      gender: "",
-      birthdate: dayjs(),
-      age: 0,
-      description: "",
-    });
+      setPetData({
+        name: "",
+        species: "",
+        breed: "",
+        gender: "",
+        birthdate: dayjs(),
+        age: 0,
+        description: "",
+      });
+    }
+
+    if (formAction === "edit") {
+      await fetch(`http://localhost:5000/pets/update/${params.id.toString()}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newPetData),
+      }).catch((error) => {
+        window.alert(error);
+        return;
+      });
+    }
   }
 
   return (
